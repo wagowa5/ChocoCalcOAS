@@ -637,7 +637,8 @@ paths:
       tags:
         - manekin
       summary: アバマネキン読み込み
-    
+
+  # TODO 装備・アバ定義してからマネキン定義する
   /api/equip/weapon:
     get:
       tags:
