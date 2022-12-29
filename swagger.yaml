@@ -23,7 +23,8 @@ paths:
         - user
       summary: user情報読み込み
 
-  /api/can:
+  # TODO シールAPIを追加する
+  /api/can/{canType}:
     get:
       tags:
         - item
@@ -33,6 +34,7 @@ paths:
       security:
         - bearerAuth: []
       parameters:
+        - $ref: "#/components/parameters/canType"
       responses:
         "200":
           description: OK
@@ -801,3 +803,277 @@ paths:
       tags:
         - admin
       summary: アバ削除
+
+
+components: 
+  # 認証ヘッダ
+  securitySchemes:
+    bearerAuth: # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+
+  # 共通エラーレスポンス
+  responses:
+    BadRequestError:
+      description: リクエスト不正エラー
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+    UnauthorizedError:
+      description: 認証エラー
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+    ForbiddenError:
+      description: アクセス拒否認証エラー
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+    RequestTimeoutError:
+      description: TimeOutエラー
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+    UpgradeRequiredError:
+      description: 強制アップグレードが必要な時に返却するエラー
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+    SystemError:
+      description: システムエラー
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+
+  # リクエストパラメータ
+  parameters:
+    Authorization:
+      name: Authorization
+      in: header
+      required: true
+      description: アクセストークン
+      schema:
+        type: string
+
+    #DIST:
+    #  name: DIST
+    #  in: header
+    #  schema:
+    #    type: string
+    #  required: false
+    #  description: |
+    #    モックサーバーのレスポンスバリエーション用オプショナルなヘッダー
+    #      * 形式： mock-json/配下の任意のディレクトリ名
+    #      * 例： DIST: 1
+    
+    canType:
+      name: canType
+      in: path
+      required: true
+      description: 魔獣缶とシールのタイプ
+      schema:
+        type: string
+
+    yearMonth:
+      name: yearMonth
+      in: path
+      required: true
+      description: 年月(YYYYMM)
+      schema:
+        type: string
+        minLength: 6
+        maxLength: 6
+
+    hogeId:
+      name: hogeId
+      in: path
+      required: true
+      description: hogeID
+      schema:
+        type: string
+
+  schemas:
+    TestInt:
+      description: テスト
+      type: object
+      required:
+        - value
+      properties:
+        value:
+          type: integer
+          description: テスト
+
+    CommonInfo:
+      description: 共通情報
+      type: object
+      required:
+        - hoge
+        - foo
+      properties:
+        hoge:
+          type: array
+          items:
+            type: string
+        foo:
+          type: array
+          items:
+            type: string
+
+    Hogehoge:
+      description: テスト
+      type: object
+      required:
+        - id
+        - content
+        - status
+        - createdAt
+      properties:
+        id:
+          type: string
+          description: ID
+        content:
+          $ref: "#/components/schemas/Content"
+        status:
+          $ref: "#/components/schemas/Status"
+        createdAt:
+          type: string
+          format: date-time
+          description: |
+            作成時刻
+            ISO 8601形式
+          example: "2020-01-01T00:00+09:00"
+
+    HogePostParameter:
+      description: hogeリクエストモデル
+      type: object
+      required:
+        - content
+      properties:
+        content:
+          $ref: "#/components/schemas/Content"
+
+    HogeSearchPostParameter:
+      description: hoge検索リクエストモデル
+      type: object
+      required:
+        - searchString
+      properties:
+        searchString:
+          type: string
+
+    ContentPutParameter:
+      description: 更新リクエストモデル
+      type: object
+      required:
+        - putContent
+      properties:
+        putContent:
+          type: string
+          #$ref: "#/components/schemas/PutContent"
+
+    Content:
+      description: テスト内容
+      type: object
+      required:
+        - flag
+        - title
+        - commonInfo
+      properties:
+        flag:
+          type: boolean
+          description: 全配信フラグ
+        title:
+          type: string
+          description: タイトル
+        commonInfo:
+          $ref: "#/components/schemas/CommonInfo"
+
+    ContentSearch:
+      description: テスト検索モデル
+      type: object
+      required:
+        - testEnum
+      properties:
+        title:
+          type: string
+          description: タイトル
+        testEnum:
+          type: array
+          items:
+            $ref: "#/components/schemas/TestEnum"
+
+    # API
+    LoginInfo:
+      description: テストログイン情報
+      type: object
+      required:
+        - id
+        - token
+      properties:
+        id:
+          type: string
+          description: ID
+        token:
+          $ref: "#/components/schemas/Token"
+
+    Error:
+      type: object
+      required:
+        - code
+        - link
+        - message
+      properties:
+        code:
+          type: integer
+          format: int32
+        link:
+          type: string
+          description: ログサービスの該当エラーに対するリンク
+        message:
+          type: string
+        validationInfo:
+          type: array
+          description: バリデーション情報の配列
+          items:
+            $ref: "#/components/schemas/ValidationInfo"
+    
+    ValidationInfo:
+      type: object
+      required:
+        - field
+        - rejectedValue
+        - message
+      properties:
+        field:
+          type: string
+          description: 対象のフィールド名
+        rejectedValue:
+          type: string
+          description: 不正な入力値
+        message:
+          type: string
+          description: バリデーションメッセージ
+
+    TestEnum:
+      type: string
+      description: |
+        セグメント抽出ステータス:
+          * ENUM1 - 1
+          * ENUM2 - 2
+          * ENUM3 - 3
+      enum:
+        - ENUM1
+        - ENUM2
+        - ENUM3
+      example: ENUM1
