@@ -49,3 +49,276 @@ paths:
           $ref: "#/components/responses/SystemError"
         "503":
           $ref: "#/components/responses/MaintenanceError"
+
+  /api/vita/all:
+    get:
+      tags:
+        - 消費アイテム
+      summary: ALLビタを使用
+  
+  /api/vita/pow:
+    get:
+      tags:
+        - 消費アイテム
+      summary: POWビタを使用
+  
+  /api/vita/int:
+    get:
+      tags:
+        - 消費アイテム
+      summary: INTビタを使用
+  
+  /api/vita/spd:
+    get:
+      tags:
+        - 消費アイテム
+      summary: SPDビタを使用
+  
+  /api/vita/vit:
+    get:
+      tags:
+        - 消費アイテム
+      summary: VITビタを使用
+  
+  /api/vita/luk:
+    get:
+      tags:
+        - 消費アイテム
+      summary: LUKビタを使用
+    
+  /api/scroll:
+    get:
+      tags:
+        - 消費アイテム
+      summary: 巻物を使用
+
+  /api/liquid/atk:
+    post:
+      tags:
+        - 消費アイテム
+      summary: アタークリキッドを使用
+    
+  /api/liquid/def:
+    post:
+      tags:
+        - 消費アイテム
+      summary: マモールリキッドを使用
+    
+  /api/liquid/mat:
+    post:
+      tags:
+        - 消費アイテム
+      summary: マホアタリキッドを使用
+    
+  /api/liquid/mdf:
+    post:
+      tags:
+        - 消費アイテム
+      summary: マホマモリキッドを使用
+    
+  /api/skill/special/eru:
+    post:
+      tags:
+        - スキル
+      summary: 大天使の加護を使用
+  
+  /api/skill/special/fairyP:
+    post:
+      tags:
+        - スキル
+      summary: 妖精王の祝福(物理)を使用
+
+  /api/skill/special/fairyM:
+    post:
+      tags:
+        - スキル
+      summary: 妖精王の祝福(魔法)を使用
+    
+  /api/skill/special/bene:
+    post:
+      tags:
+        - スキル
+      summary: 祝福の蒼盾を使用
+    
+  /api/skill/special/fis:
+    post:
+      tags:
+        - スキル
+      summary: 邪神の呪詛を使用
+  
+  /api/skill/special/sira:
+    post:
+      tags:
+        - スキル
+      summary: 大妖怪の通力を使用
+    
+  /api/skill/special/retro:
+    post:
+      tags:
+        - スキル
+      summary: スチームパンカーを使用
+
+  /api/skill/bradscraper:
+    get:
+      tags:
+        - スキル
+      summary: ブラッドスクレイパーを使用
+    
+  /api/manekin/main:
+    get:
+      tags:
+        - マネキン
+      summary: メインマネキン読み込み
+    post:
+      tags:
+        - マネキン
+      summary: メインマネキン登録
+    put:
+      tags:
+        - マネキン
+      summary: メインマネキン修正
+    delete:
+      tags:
+        - マネキン
+      summary: メインマネキン削除
+  
+  /api/manekin/sub:
+    get:
+      tags:
+        - マネキン
+      summary: サブ装備マネキン読み込み
+    post:
+      tags:
+        - マネキン
+      summary: サブ装備マネキン登録
+    put:
+      tags:
+        - マネキン
+      summary: サブ装備マネキン修正
+    delete:
+      tags:
+        - マネキン
+      summary: サブ装備マネキン削除
+  
+  /api/manekin/ava:
+    get:
+      tags:
+        - マネキン
+      summary: アバマネキン読み込み
+    post:
+      tags:
+        - マネキン
+      summary: アバマネキン登録
+    put:
+      tags:
+        - マネキン
+      summary: アバマネキン修正
+    delete:
+      tags:
+        - マネキン
+      summary: アバマネキン削除
+    
+  /api/equip:
+    get:
+      tags:
+        - 装備・アバ
+      summary: DBから装備一覧取得(部位ごとにAPI追加する)
+  
+  /api/avater:
+    get:
+      tags:
+        - 装備・アバ
+      summary: DBからアバ一覧取得(部位ごとにAPI追加する)
+
+  /api/item/equip:
+    get:
+      tags:
+        - 装備・アバ
+      summary: アイテムバッグから装備一覧取得(部位ごとにAPI追加する)
+    post:
+      tags:
+        - 装備・アバ
+      summary: アイテムバッグに装備登録(部位ごとにAPI追加する)
+    delete:
+      tags:
+        - 装備・アバ
+      summary: アイテムバッグから装備削除(部位ごとにAPI追加する)
+    
+  /api/item/avater:
+    get:
+      tags:
+        - 装備・アバ
+      summary: アイテムバッグからアバ一覧取得(部位ごとにAPI追加する)
+    post:
+      tags:
+        - 装備・アバ
+      summary: アイテムバッグにアバ登録(部位ごとにAPI追加する)
+    delete:
+      tags:
+        - 装備・アバ
+      summary: アイテムバッグからアバ削除(部位ごとにAPI追加する)
+    
+  /api/optimize/atk:
+    get:
+      tags:
+        - 計算
+      summary: アイテムバッグ内で最高ATKになる組み合わせを計算
+  
+  /api/optimize/def:
+    get:
+      tags:
+        - 計算
+      summary: アイテムバッグ内で最高DEFになる組み合わせを計算
+  
+  /api/optimize/mat:
+    get:
+      tags:
+        - 計算
+      summary: アイテムバッグ内で最高MATになる組み合わせを計算
+    
+  /api/optimize/mdf:
+    get:
+      tags:
+        - 計算
+      summary: アイテムバッグ内で最高MDFになる組み合わせを計算
+    
+  /api/admin/login:
+    post:
+      tags:
+        - 管理者
+  
+  /api/admin/db/equip:
+    get:
+      tags:
+        - 管理者
+      summary: 装備一覧取得
+    post:
+      tags:
+        - 管理者
+      summary: 装備登録
+    put:
+      tags:
+        - 管理者
+      summary: 装備修正
+    delete:
+      tags:
+        - 管理者
+      summary: 装備削除
+      
+  /api/admin/db/avater:
+    get:
+      tags:
+        - 管理者
+      summary: アバ一覧取得
+    post:
+      tags:
+        - 管理者
+      summary: アバ登録
+    put:
+      tags:
+        - 管理者
+      summary: アバ修正
+    delete:
+      tags:
+        - 管理者
+      summary: アバ削除
