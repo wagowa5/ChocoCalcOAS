@@ -288,6 +288,40 @@ paths:
       tags:
         - itembag
       summary: アイテムバッグから装備削除(部位ごとにAPI追加する)
+  
+  /api/core/phy:
+    post:
+      tags:
+        - core
+      summary: アイテムバッグの装備を物理錬成
+    delete:
+      tags:
+        - core
+      summary: 錬成解除
+
+  /api/core/mag:
+    post:
+      tags:
+        - core
+      summary: アイテムバッグの装備を魔法錬成
+    delete:
+      tags:
+        - core
+      summary: 錬成解除
+
+  /api/core/special:
+    get:
+      tags:
+        - core
+      summary: 特殊コア一覧取得
+    post:
+      tags:
+        - core
+      summary: アイテムバッグの装備に特殊コアをつける
+    delete:
+      tags:
+        - core
+      summary: 錬成解除
     
   /api/itembag/avater:
     get:
