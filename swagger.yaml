@@ -19,11 +19,14 @@ servers:
 paths:
   /api/user:
     post:
+      tags:
+        - user
+      summary: user情報読み込み
 
   /api/can:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: 魔獣缶を使用
       description: |
         魔獣缶を使用
@@ -53,272 +56,272 @@ paths:
   /api/vita/all:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: ALLビタを使用
   
   /api/vita/pow:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: POWビタを使用
   
   /api/vita/int:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: INTビタを使用
   
   /api/vita/spd:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: SPDビタを使用
   
   /api/vita/vit:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: VITビタを使用
   
   /api/vita/luk:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: LUKビタを使用
     
   /api/scroll:
     get:
       tags:
-        - 消費アイテム
+        - item
       summary: 巻物を使用
 
   /api/liquid/atk:
     post:
       tags:
-        - 消費アイテム
+        - item
       summary: アタークリキッドを使用
     
   /api/liquid/def:
     post:
       tags:
-        - 消費アイテム
+        - item
       summary: マモールリキッドを使用
     
   /api/liquid/mat:
     post:
       tags:
-        - 消費アイテム
+        - item
       summary: マホアタリキッドを使用
     
   /api/liquid/mdf:
     post:
       tags:
-        - 消費アイテム
+        - item
       summary: マホマモリキッドを使用
     
   /api/skill/special/eru:
     post:
       tags:
-        - スキル
+        - skill
       summary: 大天使の加護を使用
   
   /api/skill/special/fairyP:
     post:
       tags:
-        - スキル
+        - skill
       summary: 妖精王の祝福(物理)を使用
 
   /api/skill/special/fairyM:
     post:
       tags:
-        - スキル
+        - skill
       summary: 妖精王の祝福(魔法)を使用
     
   /api/skill/special/bene:
     post:
       tags:
-        - スキル
+        - skill
       summary: 祝福の蒼盾を使用
     
   /api/skill/special/fis:
     post:
       tags:
-        - スキル
+        - skill
       summary: 邪神の呪詛を使用
   
   /api/skill/special/sira:
     post:
       tags:
-        - スキル
+        - skill
       summary: 大妖怪の通力を使用
     
   /api/skill/special/retro:
     post:
       tags:
-        - スキル
+        - skill
       summary: スチームパンカーを使用
 
   /api/skill/bradscraper:
     get:
       tags:
-        - スキル
+        - skill
       summary: ブラッドスクレイパーを使用
     
   /api/manekin/main:
     get:
       tags:
-        - マネキン
+        - manekin
       summary: メインマネキン読み込み
     post:
       tags:
-        - マネキン
+        - manekin
       summary: メインマネキン登録
     put:
       tags:
-        - マネキン
+        - manekin
       summary: メインマネキン修正
     delete:
       tags:
-        - マネキン
+        - manekin
       summary: メインマネキン削除
   
   /api/manekin/sub:
     get:
       tags:
-        - マネキン
+        - manekin
       summary: サブ装備マネキン読み込み
     post:
       tags:
-        - マネキン
+        - manekin
       summary: サブ装備マネキン登録
     put:
       tags:
-        - マネキン
+        - manekin
       summary: サブ装備マネキン修正
     delete:
       tags:
-        - マネキン
+        - manekin
       summary: サブ装備マネキン削除
   
   /api/manekin/ava:
     get:
       tags:
-        - マネキン
+        - manekin
       summary: アバマネキン読み込み
     post:
       tags:
-        - マネキン
+        - manekin
       summary: アバマネキン登録
     put:
       tags:
-        - マネキン
+        - manekin
       summary: アバマネキン修正
     delete:
       tags:
-        - マネキン
+        - manekin
       summary: アバマネキン削除
     
   /api/equip:
     get:
       tags:
-        - 装備・アバ
+        - equip
       summary: DBから装備一覧取得(部位ごとにAPI追加する)
   
   /api/avater:
     get:
       tags:
-        - 装備・アバ
+        - avater
       summary: DBからアバ一覧取得(部位ごとにAPI追加する)
 
-  /api/item/equip:
+  /api/itembag/equip:
     get:
       tags:
-        - 装備・アバ
+        - itembag
       summary: アイテムバッグから装備一覧取得(部位ごとにAPI追加する)
     post:
       tags:
-        - 装備・アバ
+        - itembag
       summary: アイテムバッグに装備登録(部位ごとにAPI追加する)
     delete:
       tags:
-        - 装備・アバ
+        - itembag
       summary: アイテムバッグから装備削除(部位ごとにAPI追加する)
     
-  /api/item/avater:
+  /api/itembag/avater:
     get:
       tags:
-        - 装備・アバ
+        - itembag
       summary: アイテムバッグからアバ一覧取得(部位ごとにAPI追加する)
     post:
       tags:
-        - 装備・アバ
+        - itembag
       summary: アイテムバッグにアバ登録(部位ごとにAPI追加する)
     delete:
       tags:
-        - 装備・アバ
+        - itembag
       summary: アイテムバッグからアバ削除(部位ごとにAPI追加する)
     
   /api/optimize/atk:
     get:
       tags:
-        - 計算
+        - optimize
       summary: アイテムバッグ内で最高ATKになる組み合わせを計算
   
   /api/optimize/def:
     get:
       tags:
-        - 計算
+        - optimize
       summary: アイテムバッグ内で最高DEFになる組み合わせを計算
   
   /api/optimize/mat:
     get:
       tags:
-        - 計算
+        - optimize
       summary: アイテムバッグ内で最高MATになる組み合わせを計算
     
   /api/optimize/mdf:
     get:
       tags:
-        - 計算
+        - optimize
       summary: アイテムバッグ内で最高MDFになる組み合わせを計算
     
   /api/admin/login:
     post:
       tags:
-        - 管理者
+        - admin
   
   /api/admin/db/equip:
     get:
       tags:
-        - 管理者
+        - admin
       summary: 装備一覧取得
     post:
       tags:
-        - 管理者
+        - admin
       summary: 装備登録
     put:
       tags:
-        - 管理者
+        - admin
       summary: 装備修正
     delete:
       tags:
-        - 管理者
+        - admin
       summary: 装備削除
       
   /api/admin/db/avater:
     get:
       tags:
-        - 管理者
+        - admin
       summary: アバ一覧取得
     post:
       tags:
-        - 管理者
+        - admin
       summary: アバ登録
     put:
       tags:
-        - 管理者
+        - admin
       summary: アバ修正
     delete:
       tags:
-        - 管理者
+        - admin
       summary: アバ削除
