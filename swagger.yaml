@@ -275,25 +275,127 @@ paths:
         - avater
       summary: DBからアバ一覧取得(部位ごとにAPI追加する)
 
-  /api/itembag/equip:
+  /api/itembag/equip/weapon:
     get:
       tags:
         - itembag
-      summary: アイテムバッグから装備一覧取得(部位ごとにAPI追加する)
+      summary: アイテムバッグから武器一覧取得
     post:
       tags:
         - itembag
-      summary: アイテムバッグに装備登録(部位ごとにAPI追加する)
+      summary: アイテムバッグに武器登録
     delete:
       tags:
         - itembag
-      summary: アイテムバッグから装備削除(部位ごとにAPI追加する)
+      summary: アイテムバッグから武器削除
+  
+  /api/itembag/equip/head:
+    get:
+      tags:
+        - itembag
+      summary: アイテムバッグから頭装備一覧取得
+    post:
+      tags:
+        - itembag
+      summary: アイテムバッグに頭装備登録
+    delete:
+      tags:
+        - itembag
+      summary: アイテムバッグから頭装備削除
+  
+  /api/itembag/equip/chest:
+    get:
+      tags:
+        - itembag
+      summary: アイテムバッグから服装備一覧取得
+    post:
+      tags:
+        - itembag
+      summary: アイテムバッグに服装備登録
+    delete:
+      tags:
+        - itembag
+      summary: アイテムバッグから服装備削除
+  
+  /api/itembag/equip/back:
+    get:
+      tags:
+        - itembag
+      summary: アイテムバッグから背装備一覧取得
+    post:
+      tags:
+        - itembag
+      summary: アイテムバッグに背装備登録
+    delete:
+      tags:
+        - itembag
+      summary: アイテムバッグから背装備削除
+  
+  /api/itembag/equip/shield:
+    get:
+      tags:
+        - itembag
+      summary: アイテムバッグから盾一覧取得
+    post:
+      tags:
+        - itembag
+      summary: アイテムバッグに盾登録
+    delete:
+      tags:
+        - itembag
+      summary: アイテムバッグから盾削除
+  
+  /api/itembag/equip/neck:
+    get:
+      tags:
+        - itembag
+      summary: アイテムバッグから首装備一覧取得
+    post:
+      tags:
+        - itembag
+      summary: アイテムバッグに首装備登録
+    delete:
+      tags:
+        - itembag
+      summary: アイテムバッグから首装備削除
+  
+  /api/itembag/equip/hand:
+    get:
+      tags:
+        - itembag
+      summary: アイテムバッグから腕装備一覧取得
+    post:
+      tags:
+        - itembag
+      summary: アイテムバッグに腕装備登録
+    delete:
+      tags:
+        - itembag
+      summary: アイテムバッグから腕装備削除
+  
+  /api/itembag/equip/foot:
+    get:
+      tags:
+        - itembag
+      summary: アイテムバッグから足装備一覧取得
+    post:
+      tags:
+        - itembag
+      summary: アイテムバッグに足装備登録
+    delete:
+      tags:
+        - itembag
+      summary: アイテムバッグから足装備削除
   
   /api/core/phy:
     post:
       tags:
         - core
       summary: アイテムバッグの装備を物理錬成
+    put:
+      tags:
+        - core
+      summary: 物理錬成値変更
     delete:
       tags:
         - core
@@ -304,6 +406,10 @@ paths:
       tags:
         - core
       summary: アイテムバッグの装備を魔法錬成
+    put:
+      tags:
+        - core
+      summary: 魔法錬成値変更
     delete:
       tags:
         - core
@@ -323,19 +429,313 @@ paths:
         - core
       summary: 錬成解除
     
-  /api/itembag/avater:
+  /api/avater/moitoi:
     get:
       tags:
-        - itembag
-      summary: アイテムバッグからアバ一覧取得(部位ごとにAPI追加する)
+        - avater
+      summary: 所持モイトイ一覧取得
     post:
       tags:
-        - itembag
-      summary: アイテムバッグにアバ登録(部位ごとにAPI追加する)
+        - avater
+      summary: モイトイ登録
     delete:
       tags:
-        - itembag
-      summary: アイテムバッグからアバ削除(部位ごとにAPI追加する)
+        - avater
+      summary: モイトイ削除
+  
+  /api/avater/tops:
+    get:
+      tags:
+        - avater
+      summary: 所持トップス一覧取得
+    post:
+      tags:
+        - avater
+      summary: トップス登録
+    delete:
+      tags:
+        - avater
+      summary: トップス削除
+  
+  /api/avater/botoms:
+    get:
+      tags:
+        - avater
+      summary: 所持ボトムス一覧取得
+    post:
+      tags:
+        - avater
+      summary: ボトムス登録
+    delete:
+      tags:
+        - avater
+      summary: ボトムス削除
+  
+  /api/avater/outer:
+    get:
+      tags:
+        - avater
+      summary: 所持アウター一覧取得
+    post:
+      tags:
+        - avater
+      summary: アウター登録
+    delete:
+      tags:
+        - avater
+      summary: アウター削除
+  
+  /api/avater/hairstyle:
+    get:
+      tags:
+        - avater
+      summary: 所持ヘアスタイル一覧取得
+    post:
+      tags:
+        - avater
+      summary: ヘアスタイル登録
+    delete:
+      tags:
+        - avater
+      summary: ヘアスタイル削除
+  
+  /api/avater/cap:
+    get:
+      tags:
+        - avater
+      summary: 所持帽子一覧取得
+    post:
+      tags:
+        - avater
+      summary: 帽子登録
+    delete:
+      tags:
+        - avater
+      summary: 帽子削除
+  
+  /api/avater/glass:
+    get:
+      tags:
+        - avater
+      summary: 所持メガネ一覧取得
+    post:
+      tags:
+        - avater
+      summary: メガネ登録
+    delete:
+      tags:
+        - avater
+      summary: メガネ削除
+  
+  /api/avater/accessory1:
+    get:
+      tags:
+        - avater
+      summary: 所持アクセ1一覧取得
+    post:
+      tags:
+        - avater
+      summary: アクセ1登録
+    delete:
+      tags:
+        - avater
+      summary: アクセ1削除
+  
+  /api/avater/accessory2:
+    get:
+      tags:
+        - avater
+      summary: 所持アクセ2一覧取得
+    post:
+      tags:
+        - avater
+      summary: アクセ2登録
+    delete:
+      tags:
+        - avater
+      summary: アクセ2削除
+  
+  /api/avater/merchandise1:
+    get:
+      tags:
+        - avater
+      summary: 所持雑貨1一覧取得
+    post:
+      tags:
+        - avater
+      summary: 雑貨1登録
+    delete:
+      tags:
+        - avater
+      summary: 雑貨1削除
+  
+  /api/avater/merchandise2:
+    get:
+      tags:
+        - avater
+      summary: 所持雑貨2一覧取得
+    post:
+      tags:
+        - avater
+      summary: 雑貨2登録
+    delete:
+      tags:
+        - avater
+      summary: 雑貨2削除
+  
+  /api/avater/other1:
+    get:
+      tags:
+        - avater
+      summary: 所持その他1一覧取得
+    post:
+      tags:
+        - avater
+      summary: その他1登録
+    delete:
+      tags:
+        - avater
+      summary: その他1削除
+  
+  /api/avater/other2:
+    get:
+      tags:
+        - avater
+      summary: 所持その他2一覧取得
+    post:
+      tags:
+        - avater
+      summary: その他2登録
+    delete:
+      tags:
+        - avater
+      summary: その他2削除
+  
+  /api/avater/other3:
+    get:
+      tags:
+        - avater
+      summary: 所持その他3一覧取得
+    post:
+      tags:
+        - avater
+      summary: その他3登録
+    delete:
+      tags:
+        - avater
+      summary: その他3削除
+  
+  /api/avater/other4:
+    get:
+      tags:
+        - avater
+      summary: 所持その他4一覧取得
+    post:
+      tags:
+        - avater
+      summary: その他4登録
+    delete:
+      tags:
+        - avater
+      summary: その他4削除
+
+  /api/avater/pet1:
+    get:
+      tags:
+        - avater
+      summary: 所持ペット1一覧取得
+    post:
+      tags:
+        - avater
+      summary: ペット1登録
+    delete:
+      tags:
+        - avater
+      summary: ペット1削除
+  
+  /api/avater/pet2:
+    get:
+      tags:
+        - avater
+      summary: 所持ペット2一覧取得
+    post:
+      tags:
+        - avater
+      summary: ペット2登録
+    delete:
+      tags:
+        - avater
+      summary: ペット2削除
+  
+  /api/avater/pet3:
+    get:
+      tags:
+        - avater
+      summary: 所持ペット3一覧取得
+    post:
+      tags:
+        - avater
+      summary: ペット3登録
+    delete:
+      tags:
+        - avater
+      summary: ペット3削除
+  
+  /api/avater/pet4:
+    get:
+      tags:
+        - avater
+      summary: 所持ペット4一覧取得
+    post:
+      tags:
+        - avater
+      summary: ペット4登録
+    delete:
+      tags:
+        - avater
+      summary: ペット4削除
+  
+  /api/avater/background:
+    get:
+      tags:
+        - avater
+      summary: 所持背景一覧取得
+    post:
+      tags:
+        - avater
+      summary: 背景登録
+    delete:
+      tags:
+        - avater
+      summary: 背景削除
+  
+  /api/avater/effect:
+    get:
+      tags:
+        - avater
+      summary: 所持エフェクト一覧取得
+    post:
+      tags:
+        - avater
+      summary: エフェクト登録
+    delete:
+      tags:
+        - avater
+      summary: エフェクト削除
+  
+  /api/avater/face:
+    get:
+      tags:
+        - avater
+      summary: 所持フェイス一覧取得
+    post:
+      tags:
+        - avater
+      summary: フェイス登録
+    delete:
+      tags:
+        - avater
+      summary: フェイス削除
     
   /api/optimize/atk:
     get:
