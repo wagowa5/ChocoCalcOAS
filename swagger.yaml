@@ -23,18 +23,23 @@ paths:
         - user
       summary: user情報読み込み
 
-  # TODO シールAPIを追加する
-  /api/can/{canType}:
-    get:
+  /api/can:
+    post:
       tags:
         - item
-      summary: 魔獣缶を使用
+      summary: 魔獣缶・シールを使用
       description: |
-        魔獣缶を使用
+        魔獣缶・シールを使用
       security:
         - bearerAuth: []
-      parameters:
-        - $ref: "#/components/parameters/canType"
+      #parameters:
+      #  - $ref: "#/components/parameters/canType"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/canType"
+        required: true
       responses:
         "200":
           description: OK
@@ -48,132 +53,524 @@ paths:
           $ref: "#/components/responses/UnauthorizedError"
         "408":
           $ref: "#/components/responses/RequestTimeoutError"
-        "426":
-          $ref: "#/components/responses/UpgradeRequiredError"
         "500":
           $ref: "#/components/responses/SystemError"
-        "503":
-          $ref: "#/components/responses/MaintenanceError"
+        #"503":
+        #  $ref: "#/components/responses/MaintenanceError"
 
   /api/vita/all:
-    get:
+    post:
       tags:
         - item
       summary: ALLビタを使用
+      description: |
+        ALLビタを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/vita/pow:
-    get:
+    post:
       tags:
         - item
       summary: POWビタを使用
+      description: |
+        POWビタを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/vita/int:
-    get:
+    post:
       tags:
         - item
       summary: INTビタを使用
+      description: |
+        INTビタを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/vita/spd:
-    get:
+    post:
       tags:
         - item
       summary: SPDビタを使用
+      description: |
+        SPDビタを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/vita/vit:
-    get:
+    post:
       tags:
         - item
       summary: VITビタを使用
+      description: |
+        VITビタを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/vita/luk:
-    get:
+    post:
       tags:
         - item
       summary: LUKビタを使用
+      description: |
+        LUKビタを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/scroll:
-    get:
+    post:
       tags:
         - item
       summary: 巻物を使用
+      description: |
+        巻物を使用
+      security:
+        - bearerAuth: []
+      #parameters:
+      #  - $ref: "#/components/parameters/scrollType"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/scrollType"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/liquid/atk:
     post:
       tags:
         - item
       summary: アタークリキッドを使用
+      description: |
+        アタークリキッドを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/liquid/def:
     post:
       tags:
         - item
       summary: マモールリキッドを使用
+      description: |
+        マモールリキッドを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/liquid/mat:
     post:
       tags:
         - item
       summary: マホアタリキッドを使用
+      description: |
+        マホアタリキッドを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/liquid/mdf:
     post:
       tags:
         - item
       summary: マホマモリキッドを使用
+      description: |
+        マホマモリキッドを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/skill/special/eru:
     post:
       tags:
         - skill
       summary: 大天使の加護を使用
+      description: |
+        大天使の加護を使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/skill/special/fairyP:
     post:
       tags:
         - skill
       summary: 妖精王の祝福(物理)を使用
+      description: |
+        妖精王の祝福(物理)を使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/skill/special/fairyM:
     post:
       tags:
         - skill
       summary: 妖精王の祝福(魔法)を使用
-    
+      description: |
+        妖精王の祝福(魔法)を使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
+
   /api/skill/special/bene:
     post:
       tags:
         - skill
       summary: 祝福の蒼盾を使用
+      description: |
+        祝福の蒼盾を使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/skill/special/fis:
     post:
       tags:
         - skill
       summary: 邪神の呪詛を使用
+      description: |
+        邪神の呪詛を使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/skill/special/sira:
     post:
       tags:
         - skill
       summary: 大妖怪の通力を使用
+      description: |
+        大妖怪の通力を使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/skill/special/retro:
     post:
       tags:
         - skill
       summary: スチームパンカーを使用
+      description: |
+        スチームパンカーを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/skill/bradscraper:
     get:
       tags:
         - skill
       summary: ブラッドスクレイパーを使用
-    
+      description: |
+        ブラッドスクレイパーを使用
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
+
+  # TODO 装備+アバのマネキンセットのAPIも作る
+  #/api/manekin:
+  #  get:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン一覧取得
+  #  post:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン登録
+  #  put:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン修正
+  #  delete:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン削除
+  
+  #/api/manekin/{manekinName}:
+  #  get:
+  #    tags:
+  #      - manekin
+  #    summary: マネキン一覧取得
+
   /api/manekin/main:
     get:
       tags:
         - manekin
-      summary: メインマネキン読み込み
+      summary: メインマネキン一覧取得
     post:
       tags:
         - manekin
@@ -187,11 +584,17 @@ paths:
         - manekin
       summary: メインマネキン削除
   
+  /api/manekin/main/{manekinName}:
+    get:
+      tags:
+        - manekin
+      summary: メインマネキン読み込み
+  
   /api/manekin/sub:
     get:
       tags:
         - manekin
-      summary: サブ装備マネキン読み込み
+      summary: サブ装備マネキン一覧取得
     post:
       tags:
         - manekin
@@ -205,11 +608,17 @@ paths:
         - manekin
       summary: サブ装備マネキン削除
   
+  /api/manekin/sub/{manekinName}:
+    get:
+      tags:
+        - manekin
+      summary: サブ装備マネキン読み込み
+  
   /api/manekin/ava:
     get:
       tags:
         - manekin
-      summary: アバマネキン読み込み
+      summary: アバマネキン一覧取得
     post:
       tags:
         - manekin
@@ -222,6 +631,12 @@ paths:
       tags:
         - manekin
       summary: アバマネキン削除
+  
+  /api/manekin/ava/{manekinName}:
+    get:
+      tags:
+        - manekin
+      summary: アバマネキン読み込み
     
   /api/equip/weapon:
     get:
@@ -842,13 +1257,6 @@ components:
           schema:
             $ref: "#/components/schemas/Error"
 
-    UpgradeRequiredError:
-      description: 強制アップグレードが必要な時に返却するエラー
-      content:
-        application/json:
-          schema:
-            $ref: "#/components/schemas/Error"
-
     SystemError:
       description: システムエラー
       content:
@@ -876,24 +1284,16 @@ components:
     #    モックサーバーのレスポンスバリエーション用オプショナルなヘッダー
     #      * 形式： mock-json/配下の任意のディレクトリ名
     #      * 例： DIST: 1
-    
-    canType:
-      name: canType
-      in: path
-      required: true
-      description: 魔獣缶とシールのタイプ
-      schema:
-        type: string
 
-    yearMonth:
-      name: yearMonth
-      in: path
-      required: true
-      description: 年月(YYYYMM)
-      schema:
-        type: string
-        minLength: 6
-        maxLength: 6
+    #yearMonth:
+    #  name: yearMonth
+    #  in: path
+    #  required: true
+    #  description: 年月(YYYYMM)
+    #  schema:
+    #    type: string
+    #    minLength: 6
+    #    maxLength: 6
 
     hogeId:
       name: hogeId
@@ -904,6 +1304,80 @@ components:
         type: string
 
   schemas:
+    CanType:
+      type: string
+      description: |
+        魔獣缶・シールのタイプ:
+          * A - 魔獣缶A
+          * B - 魔獣缶A
+          * POW - POWシール
+          * INT - INTシール
+          * SPD - SPDシール
+          * VIT - VITシール
+          * LUK - LUKシール
+      enum:
+        - A
+        - B
+        - POW
+        - INT
+        - SPD
+        - VIT
+        - LUK
+      example: B
+    
+    ScrollType:
+      type: object
+      description: |
+        巻物モデル
+      required:
+        - upStatus
+        - rank
+      properties:
+        upStatus:
+          type: string
+          description: |
+            巻物の種類:
+              * HP - 魔獣缶A
+              * SP - 魔獣缶A
+              * POW - POWシール
+              * INT - INTシール
+              * SPD - SPDシール
+              * VIT - VITシール
+              * LUK - LUKシール
+          enum:
+            - HP
+            - SP
+            - POW
+            - INT
+            - SPD
+            - VIT
+            - LUK
+        rank:
+          type: string
+          description: |
+            ランク:
+              * 1 - 1
+              * 2 - 2
+              * 3 - 3
+              * 4 - 4
+              * 5 - 5
+              * 6 - 6
+              * 7 - 7
+              * 8 - 8
+              * 9 - 9
+              * 10 - 10
+          enum:
+            - 1
+            - 2
+            - 3
+            - 4
+            - 5
+            - 6
+            - 7
+            - 8
+            - 9
+            - 10
+
     TestInt:
       description: テスト
       type: object
@@ -1077,3 +1551,26 @@ components:
         - ENUM2
         - ENUM3
       example: ENUM1
+
+    Token:
+      description: アクセストークン
+      type: object
+      required:
+        - tokenType
+        - accessToken
+        - refreshToken
+        - expiresIn
+      properties:
+        tokenType:
+          type: string
+          description: トークンタイプ
+        accessToken:
+          type: string
+          description: アクセストークン
+        refreshToken:
+          type: string
+          description: リフレッシュトークン
+        expiresIn:
+          type: integer
+          format: int64
+          description: 有効秒数
