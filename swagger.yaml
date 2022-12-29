@@ -1,0 +1,51 @@
+openapi: 3.0.0
+
+info:
+  title: チョコットランド計算機(非公式)
+  description: |
+    チョコットランド計算機 - 中間サーバ間通信のAPI仕様  
+  version: 1.0.0
+
+externalDocs:
+  url: https://www.google.com/?hl=ja
+  description: 設計資料
+
+servers:
+  - url: https://choco.calc.jp
+    description: 本番API
+  - url: https://stg.choco.calc.jp
+    description: ステージングAPI
+
+paths:
+  /api/user:
+    post:
+
+  /api/can:
+    get:
+      tags:
+        - 消費アイテム
+      summary: 魔獣缶を使用
+      description: |
+        魔獣缶を使用
+      security:
+        - bearerAuth: []
+      parameters:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "426":
+          $ref: "#/components/responses/UpgradeRequiredError"
+        "500":
+          $ref: "#/components/responses/SystemError"
+        "503":
+          $ref: "#/components/responses/MaintenanceError"
