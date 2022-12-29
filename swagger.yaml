@@ -221,11 +221,53 @@ paths:
         - manekin
       summary: アバマネキン削除
     
-  /api/equip:
+  /api/equip/weapon:
     get:
       tags:
         - equip
-      summary: DBから装備一覧取得(部位ごとにAPI追加する)
+      summary: DBから武器一覧取得
+
+  /api/equip/head:
+    get:
+      tags:
+        - equip
+      summary: DBから頭一覧取得
+
+  /api/equip/chest:
+    get:
+      tags:
+        - equip
+      summary: DBから服一覧取得
+
+  /api/equip/back:
+    get:
+      tags:
+        - equip
+      summary: DBから背一覧取得
+
+  /api/equip/shield:
+    get:
+      tags:
+        - equip
+      summary: DBから盾一覧取得
+
+  /api/equip/neck:
+    get:
+      tags:
+        - equip
+      summary: DBから首一覧取得
+
+  /api/equip/hand:
+    get:
+      tags:
+        - equip
+      summary: DBから腕一覧取得
+
+  /api/equip/foot:
+    get:
+      tags:
+        - equip
+      summary: DBから足一覧取得
   
   /api/avater:
     get:
