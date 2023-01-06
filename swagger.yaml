@@ -18,10 +18,110 @@ servers:
 
 paths:
   /api/user:
-    post:
+    get:
       tags:
         - user
       summary: user情報読み込み
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
+
+    post:
+      tags:
+        - user
+      summary: user情報登録
+      security:
+        - bearerAuth: []
+      #parameters:
+      #  - $ref: "#/components/parameters/canType"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/canType"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
+  
+  # TODO ステータス振り分け, ロイヤル, ヘアメイクステ
+  /api/job:
+    get:
+      tags:
+        - job
+      summary: 職業情報読み込み
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
+    post:
+      tags:
+        - job
+      summary: 職業情報登録
+      security:
+        - bearerAuth: []
+      #parameters:
+      #  - $ref: "#/components/parameters/canType"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/canType"
+        required: true
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/can:
     post:
@@ -571,653 +671,2966 @@ paths:
       tags:
         - manekin
       summary: メインマネキン一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - manekin
       summary: メインマネキン登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     put:
       tags:
         - manekin
       summary: メインマネキン修正
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - manekin
       summary: メインマネキン削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/manekin/main/{manekinName}:
     get:
       tags:
         - manekin
       summary: メインマネキン読み込み
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/manekin/sub:
     get:
       tags:
         - manekin
       summary: サブ装備マネキン一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - manekin
       summary: サブ装備マネキン登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     put:
       tags:
         - manekin
       summary: サブ装備マネキン修正
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - manekin
       summary: サブ装備マネキン削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/manekin/sub/{manekinName}:
     get:
       tags:
         - manekin
       summary: サブ装備マネキン読み込み
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/manekin/ava:
     get:
       tags:
         - manekin
       summary: アバマネキン一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - manekin
       summary: アバマネキン登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     put:
       tags:
         - manekin
       summary: アバマネキン修正
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - manekin
       summary: アバマネキン削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/manekin/ava/{manekinName}:
     get:
       tags:
         - manekin
       summary: アバマネキン読み込み
-    
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
+
+  # TODO 装備・アバ定義してからマネキン定義する
   /api/equip/weapon:
     get:
       tags:
         - equip
       summary: DBから武器一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/equip/head:
     get:
       tags:
         - equip
       summary: DBから頭一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/equip/chest:
     get:
       tags:
         - equip
       summary: DBから服一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/equip/back:
     get:
       tags:
         - equip
       summary: DBから背一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/equip/shield:
     get:
       tags:
         - equip
       summary: DBから盾一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/equip/neck:
     get:
       tags:
         - equip
       summary: DBから首一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/equip/hand:
     get:
       tags:
         - equip
       summary: DBから腕一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/equip/foot:
     get:
       tags:
         - equip
       summary: DBから足一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater:
     get:
       tags:
         - avater
       summary: DBからアバ一覧取得(部位ごとにAPI追加する)
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/itembag/equip/weapon:
     get:
       tags:
         - itembag
       summary: アイテムバッグから武器一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに武器登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから武器削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/itembag/equip/head:
     get:
       tags:
         - itembag
       summary: アイテムバッグから頭装備一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに頭装備登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから頭装備削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/itembag/equip/chest:
     get:
       tags:
         - itembag
       summary: アイテムバッグから服装備一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに服装備登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから服装備削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/itembag/equip/back:
     get:
       tags:
         - itembag
       summary: アイテムバッグから背装備一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに背装備登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから背装備削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/itembag/equip/shield:
     get:
       tags:
         - itembag
       summary: アイテムバッグから盾一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに盾登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから盾削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/itembag/equip/neck:
     get:
       tags:
         - itembag
       summary: アイテムバッグから首装備一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに首装備登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから首装備削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/itembag/equip/hand:
     get:
       tags:
         - itembag
       summary: アイテムバッグから腕装備一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに腕装備登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから腕装備削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/itembag/equip/foot:
     get:
       tags:
         - itembag
       summary: アイテムバッグから足装備一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - itembag
       summary: アイテムバッグに足装備登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - itembag
       summary: アイテムバッグから足装備削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/core/phy:
     post:
       tags:
         - core
       summary: アイテムバッグの装備を物理錬成
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     put:
       tags:
         - core
       summary: 物理錬成値変更
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - core
       summary: 錬成解除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/core/mag:
     post:
       tags:
         - core
       summary: アイテムバッグの装備を魔法錬成
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     put:
       tags:
         - core
       summary: 魔法錬成値変更
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - core
       summary: 錬成解除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/core/special:
     get:
       tags:
         - core
       summary: 特殊コア一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - core
       summary: アイテムバッグの装備に特殊コアをつける
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - core
       summary: 錬成解除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/avater/moitoi:
     get:
       tags:
         - avater
       summary: 所持モイトイ一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: モイトイ登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: モイトイ削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/tops:
     get:
       tags:
         - avater
       summary: 所持トップス一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: トップス登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: トップス削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/botoms:
     get:
       tags:
         - avater
       summary: 所持ボトムス一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: ボトムス登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: ボトムス削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/outer:
     get:
       tags:
         - avater
       summary: 所持アウター一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: アウター登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: アウター削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/hairstyle:
     get:
       tags:
         - avater
       summary: 所持ヘアスタイル一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: ヘアスタイル登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: ヘアスタイル削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/cap:
     get:
       tags:
         - avater
       summary: 所持帽子一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: 帽子登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: 帽子削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/glass:
     get:
       tags:
         - avater
       summary: 所持メガネ一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: メガネ登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: メガネ削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/accessory1:
     get:
       tags:
         - avater
       summary: 所持アクセ1一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: アクセ1登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: アクセ1削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/accessory2:
     get:
       tags:
         - avater
       summary: 所持アクセ2一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: アクセ2登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: アクセ2削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/merchandise1:
     get:
       tags:
         - avater
       summary: 所持雑貨1一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: 雑貨1登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: 雑貨1削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/merchandise2:
     get:
       tags:
         - avater
       summary: 所持雑貨2一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: 雑貨2登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: 雑貨2削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/other1:
     get:
       tags:
         - avater
       summary: 所持その他1一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: その他1登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: その他1削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/other2:
     get:
       tags:
         - avater
       summary: 所持その他2一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: その他2登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: その他2削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/other3:
     get:
       tags:
         - avater
       summary: 所持その他3一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: その他3登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: その他3削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/other4:
     get:
       tags:
         - avater
       summary: 所持その他4一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: その他4登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: その他4削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
   /api/avater/pet1:
     get:
       tags:
         - avater
       summary: 所持ペット1一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: ペット1登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: ペット1削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/pet2:
     get:
       tags:
         - avater
       summary: 所持ペット2一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: ペット2登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: ペット2削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/pet3:
     get:
       tags:
         - avater
       summary: 所持ペット3一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: ペット3登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: ペット3削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/pet4:
     get:
       tags:
         - avater
       summary: 所持ペット4一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: ペット4登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: ペット4削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/background:
     get:
       tags:
         - avater
       summary: 所持背景一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: 背景登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: 背景削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/effect:
     get:
       tags:
         - avater
       summary: 所持エフェクト一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: エフェクト登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: エフェクト削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/avater/face:
     get:
       tags:
         - avater
       summary: 所持フェイス一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - avater
       summary: フェイス登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - avater
       summary: フェイス削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/optimize/atk:
     get:
       tags:
         - optimize
       summary: アイテムバッグ内で最高ATKになる組み合わせを計算
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/optimize/def:
     get:
       tags:
         - optimize
       summary: アイテムバッグ内で最高DEFになる組み合わせを計算
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/optimize/mat:
     get:
       tags:
         - optimize
       summary: アイテムバッグ内で最高MATになる組み合わせを計算
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/optimize/mdf:
     get:
       tags:
         - optimize
       summary: アイテムバッグ内で最高MDFになる組み合わせを計算
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     
   /api/admin/login:
     post:
       tags:
         - admin
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
   
   /api/admin/db/equip:
     get:
       tags:
         - admin
       summary: 装備一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - admin
       summary: 装備登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     put:
       tags:
         - admin
       summary: 装備修正
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - admin
       summary: 装備削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
       
   /api/admin/db/avater:
     get:
       tags:
         - admin
       summary: アバ一覧取得
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Ava"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     post:
       tags:
         - admin
       summary: アバ登録
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     put:
       tags:
         - admin
       summary: アバ修正
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
     delete:
       tags:
         - admin
       summary: アバ削除
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CharacterInfo"
+        "400":
+          $ref: "#/components/responses/BadRequestError"
+        "401":
+          $ref: "#/components/responses/UnauthorizedError"
+        "408":
+          $ref: "#/components/responses/RequestTimeoutError"
+        "500":
+          $ref: "#/components/responses/SystemError"
 
 
 components: 
@@ -1284,16 +3697,6 @@ components:
     #    モックサーバーのレスポンスバリエーション用オプショナルなヘッダー
     #      * 形式： mock-json/配下の任意のディレクトリ名
     #      * 例： DIST: 1
-
-    #yearMonth:
-    #  name: yearMonth
-    #  in: path
-    #  required: true
-    #  description: 年月(YYYYMM)
-    #  schema:
-    #    type: string
-    #    minLength: 6
-    #    maxLength: 6
 
     hogeId:
       name: hogeId
