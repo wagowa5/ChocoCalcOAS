@@ -18,10 +18,26 @@ servers:
 
 paths:
   /api/user:
-    post:
+    get:
       tags:
         - user
       summary: user情報読み込み
+
+    post:
+      tags:
+        - user
+      summary: user情報登録
+  
+  # TODO ステータス振り分け, ロイヤル, ヘアメイクステ
+  /api/job:
+    get:
+      tags:
+        - job
+      summary: 職業情報読み込み
+    post:
+      tags:
+        - job
+      summary: 職業情報登録
 
   /api/can:
     post:
@@ -1285,16 +1301,6 @@ components:
     #    モックサーバーのレスポンスバリエーション用オプショナルなヘッダー
     #      * 形式： mock-json/配下の任意のディレクトリ名
     #      * 例： DIST: 1
-
-    #yearMonth:
-    #  name: yearMonth
-    #  in: path
-    #  required: true
-    #  description: 年月(YYYYMM)
-    #  schema:
-    #    type: string
-    #    minLength: 6
-    #    maxLength: 6
 
     hogeId:
       name: hogeId
