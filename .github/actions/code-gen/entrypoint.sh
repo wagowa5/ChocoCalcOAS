@@ -29,22 +29,23 @@ rm -rf \
   #dist
 
 ## generate merged oas.yaml
-java -jar ${JAR_PATH} generate \
-	-g openapi-yaml \
-	-i ./src/host.yaml \
-	-o ./dist
+java -jar ${JAR_PATH} generate #\
+	#-g openapi-yaml \
+	#-i ./src/host.yaml \
+	#-o ./dist
 
 ## validation
-java -jar ${JAR_PATH} validate -i ./dist/openapi/openapi.yaml
+java -jar ${JAR_PATH} validate 
+  #-i ./dist/openapi/openapi.yaml
 
 ## generate kotlin-spring
-java -jar ${JAR_PATH} generate \
-  -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
-  -t ./config/spring/mustache \
-  -c ./config/spring/config.yaml \
-  -i ./dist/openapi/openapi.yaml \
-  -o ./kotlin-spring \
-  --skip-validate-spec
+java -jar ${JAR_PATH} generate #\
+  #-g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
+  #-t ./config/spring/mustache \
+  #-c ./config/spring/config.yaml \
+  #-i ./dist/openapi/openapi.yaml \
+  #-o ./kotlin-spring \
+  #--skip-validate-spec
 
 rm -rf kotlin-spring/docs \
   kotlin-spring/build.gradle.kts \
@@ -60,11 +61,11 @@ rm -rf kotlin-spring/docs \
 #rm -rf multiplatform/docs
 
 ## generate typescript
-java -jar ${JAR_PATH} generate \
-  -i ./dist/openapi/openapi.yaml \
-  -g typescript-axios \
-  -t ./config/typescript/mustache \
-  -o typescript
+java -jar ${JAR_PATH} generate #\
+  #-i ./dist/openapi/openapi.yaml \
+  #-g typescript-axios \
+  #-t ./config/typescript/mustache \
+  #-o typescript
 
 ## remove all README.md
 #find multiplatform kotlin-spring typescript -name "README.md" | xargs rm
