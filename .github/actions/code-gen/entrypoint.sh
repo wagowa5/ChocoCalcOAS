@@ -15,18 +15,18 @@ git remote set-url origin https://wagowa5@github.com/${GITHUB_REPOSITORY}.git
 git checkout $GIT_BRANCH
 
 # バージョンが上がればv*.*.*を変更する
-(cd ./bin && curl -O https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.0.1/openapi-generator-cli-6.0.1.jar && cd ..)
+(cd ./bin && curl -O https://repo1.maven.org/maven2/org/openapitools/openapi-generator-cli/6.2.1/openapi-generator-cli-6.2.1.jar && cd ..)
 
 
 # OpenAPI Generate
-export JAR_PATH=./bin/openapi-generator-cli-6.0.1.jar
+export JAR_PATH=./bin/openapi-generator-cli-6.2.1.jar
 
 ## remove old generated code
 rm -rf \
-  kotlin-spring \
-  typescript \
+  #kotlin-spring \
+  typescript
   #multiplatform \
-  dist
+  #dist
 
 ## generate merged oas.yaml
 java -jar ${JAR_PATH} generate \
