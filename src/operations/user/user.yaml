@@ -1,0 +1,50 @@
+get:
+  tags:
+    - user
+  summary: user情報読み込み
+  security:
+    - bearerAuth: []
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CharacterInfo"
+    "400":
+      $ref: "#/components/responses/BadRequestError"
+    "401":
+      $ref: "#/components/responses/UnauthorizedError"
+    "408":
+      $ref: "#/components/responses/RequestTimeoutError"
+    "500":
+      $ref: "#/components/responses/SystemError"
+post:
+  tags:
+    - user
+  summary: user情報登録
+  security:
+    - bearerAuth: []
+  #parameters:
+  #  - $ref: "#/components/parameters/canType"
+  requestBody:
+    content:
+      application/json:
+        schema:
+          $ref: "#/components/schemas/canType"
+    required: true
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CharacterInfo"
+    "400":
+      $ref: "#/components/responses/BadRequestError"
+    "401":
+      $ref: "#/components/responses/UnauthorizedError"
+    "408":
+      $ref: "#/components/responses/RequestTimeoutError"
+    "500":
+      $ref: "#/components/responses/SystemError"
