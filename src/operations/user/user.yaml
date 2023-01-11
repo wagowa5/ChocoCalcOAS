@@ -27,12 +27,12 @@ post:
     - bearerAuth: []
   #parameters:
   #  - $ref: "#/components/parameters/canType"
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: "#/components/schemas/canType"
-    required: true
+  #requestBody:
+  #  content:
+  #    application/json:
+  #      schema:
+  #        $ref: "#/components/schemas/canType"
+  #  required: true
   responses:
     "200":
       description: OK
@@ -48,4 +48,8 @@ post:
       $ref: "#/components/responses/RequestTimeoutError"
     "500":
       $ref: "#/components/responses/SystemError"
-      
+
+components:
+  schemas:
+    CharacterInfo:
+      type: string
