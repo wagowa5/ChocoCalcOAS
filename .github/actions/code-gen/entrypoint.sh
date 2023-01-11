@@ -24,22 +24,22 @@ export JAR_PATH=./bin/openapi-generator-cli-6.0.1.jar
 ## remove old generated code
 rm -rf \
   kotlin-spring \
-  typescript
+  typescript \
   #multiplatform \
-  #dist
+  dist
 
 ## generate merged oas.yaml
-java -jar ${JAR_PATH} generate #\
-	#-g openapi-yaml \
-	#-i ./src/host.yaml \
-	#-o ./dist
+java -jar ${JAR_PATH} generate \
+	-g openapi-yaml \
+	-i ./src/host.yaml \
+	-o ./dist
 
 ## validation
 java -jar ${JAR_PATH} validate 
-  #-i ./dist/openapi/openapi.yaml
+  -i ./dist/openapi/openapi.yaml
 
 ## generate kotlin-spring
-java -jar ${JAR_PATH} generate #\
+#java -jar ${JAR_PATH} generate \
   #-g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
   #-t ./config/spring/mustache \
   #-c ./config/spring/config.yaml \
@@ -61,11 +61,11 @@ rm -rf kotlin-spring/docs \
 #rm -rf multiplatform/docs
 
 ## generate typescript
-java -jar ${JAR_PATH} generate #\
-  #-i ./dist/openapi/openapi.yaml \
-  #-g typescript-axios \
+java -jar ${JAR_PATH} generate \
+  -i ./dist/openapi/openapi.yaml \
+  -g typescript-axios \
   #-t ./config/typescript/mustache \
-  #-o typescript
+  -o typescript
 
 ## remove all README.md
 #find multiplatform kotlin-spring typescript -name "README.md" | xargs rm

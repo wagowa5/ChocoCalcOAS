@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - master
     paths:
-      - "swagger.yaml"
+      - "src/**/*.yaml"
       - ".github/actions/code-gen/entrypoint.sh"
 
 env:
