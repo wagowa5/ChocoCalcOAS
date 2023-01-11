@@ -22,9 +22,9 @@ git checkout $GIT_BRANCH
 export JAR_PATH=./bin/openapi-generator-cli-6.2.1.jar
 
 ## remove old generated code
-rm -rf \
+#rm -rf \
   #kotlin-spring \
-  typescript
+  #typescript
   #multiplatform \
   #dist
 
