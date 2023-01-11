@@ -1,7 +1,8 @@
+# TODO ステータス振り分け, ロイヤル, ヘアメイクステ
 get:
   tags:
-    - user
-  summary: user情報読み込み
+    - job
+  summary: 職業情報読み込み
   security:
     - bearerAuth: []
   responses:
@@ -21,8 +22,8 @@ get:
       $ref: "#/components/responses/SystemError"
 post:
   tags:
-    - user
-  summary: user情報登録
+    - job
+  summary: 職業情報登録
   security:
     - bearerAuth: []
   #parameters:
@@ -48,4 +49,3 @@ post:
       $ref: "#/components/responses/RequestTimeoutError"
     "500":
       $ref: "#/components/responses/SystemError"
-      

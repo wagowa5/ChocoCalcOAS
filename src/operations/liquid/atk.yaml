@@ -1,0 +1,24 @@
+post:
+  tags:
+    - item
+  summary: アタークリキッドを使用
+  description: |
+    アタークリキッドを使用
+  security:
+    - bearerAuth: []
+  responses:
+    "200":
+      description: OK
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/CharacterInfo"
+    "400":
+      $ref: "#/components/responses/BadRequestError"
+    "401":
+      $ref: "#/components/responses/UnauthorizedError"
+    "408":
+      $ref: "#/components/responses/RequestTimeoutError"
+    "500":
+      $ref: "#/components/responses/SystemError"
+      
