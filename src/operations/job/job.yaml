@@ -29,12 +29,12 @@ post:
     - bearerAuth: []
   #parameters:
   #  - $ref: "#/components/parameters/canType"
-  requestBody:
-    content:
-      application/json:
-        schema:
-          $ref: "#/components/schemas/canType"
-    required: true
+  #requestBody:
+  #  content:
+  #    application/json:
+  #      schema:
+  #        $ref: "#/components/schemas/canType"
+  #  required: true
   responses:
     "200":
       description: OK
