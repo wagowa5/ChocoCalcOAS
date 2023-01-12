@@ -5,7 +5,7 @@ on:
     branches-ignore:
       - master
     paths:
-      - "swagger.yaml"
+      - "src/**/*.yaml"
       - ".github/actions/code-gen/entrypoint.sh"
 
 env:
@@ -27,7 +27,7 @@ jobs:
       - name: generate
         run: |
           sh ./.github/actions/code-gen/entrypoint.sh
-          #sh ./.github/actions/mock-json-gen/entrypoint.sh
+#          sh ./.github/actions/mock-json-gen/entrypoint.sh
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -52,7 +52,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
 #    steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
- #   - uses: actions/checkout@v2
+#   - uses: actions/checkout@v2
 
     # clientをcheckout
 #    - uses: actions/checkout@v2

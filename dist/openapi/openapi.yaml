@@ -1,0 +1,557 @@
+openapi: 3.0.0
+info:
+  description: "チョコットランド計算機 - 中間サーバ間通信のAPI仕様  \n"
+  title: チョコットランド計算機(非公式)
+  version: 1.0.0
+externalDocs:
+  description: 設計資料(何か作ったらここにリンク貼る)
+  url: https://www.google.com/?hl=ja
+servers:
+- description: 本番API
+  url: https://choco.calc.jp
+- description: ステージングAPI
+  url: https://stg.choco.calc.jp
+paths:
+  /api/user:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: user情報読み込み
+      tags:
+      - user
+    post:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: user情報登録
+      tags:
+      - user
+  /api/job:
+    get:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: 職業情報読み込み
+      tags:
+      - job
+    post:
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: 職業情報登録
+      tags:
+      - job
+  /api/can:
+    post:
+      description: |
+        魔獣缶・シールを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: 魔獣缶・シールを使用
+      tags:
+      - item
+  /api/vita/all:
+    post:
+      description: |
+        ALLビタを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: ALLビタを使用
+      tags:
+      - item
+  /api/vita/pow:
+    post:
+      description: |
+        POWビタを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: POWビタを使用
+      tags:
+      - item
+  /api/vita/int:
+    post:
+      description: |
+        INTビタを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: INTビタを使用
+      tags:
+      - item
+  /api/liquid/atk:
+    post:
+      description: |
+        アタークリキッドを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: アタークリキッドを使用
+      tags:
+      - item
+  /api/liquid/def:
+    post:
+      description: |
+        マモールリキッドを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: マモールリキッドを使用
+      tags:
+      - item
+  /api/liquid/mat:
+    post:
+      description: |
+        マホアタリキッドを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: マホアタリキッドを使用
+      tags:
+      - item
+  /api/liquid/mdf:
+    post:
+      description: |
+        マホマモリキッドを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: マホマモリキッドを使用
+      tags:
+      - item
+components:
+  responses:
+    BadRequestError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+      description: リクエスト不正エラー
+    UnauthorizedError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+      description: 認証エラー
+    RequestTimeoutError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+      description: TimeOutエラー
+    SystemError:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/error'
+      description: システムエラー
+  schemas:
+    CharacterInfo:
+      type: string
+    error:
+      properties:
+        code:
+          format: int32
+          type: integer
+        link:
+          description: ログサービスの該当エラーに対するリンク
+          type: string
+        message:
+          type: string
+        validationInfo:
+          description: バリデーション情報の配列
+          items:
+            $ref: '#/components/schemas/validation_info'
+          type: array
+        browserLink:
+          description: エラー時に案内するページのリンク
+          type: string
+        numberOfBackScreen:
+          description: 何画面前に戻る必要があるか
+          type: integer
+      required:
+      - code
+      - link
+      - message
+      title: Error
+      type: object
+    validation_info:
+      properties:
+        field:
+          description: 対象のフィールド名
+          type: string
+        rejectedValue:
+          description: 不正な入力値
+          type: string
+        message:
+          description: バリデーションメッセージ
+          type: string
+      required:
+      - field
+      - message
+      - rejectedValue
+      title: ValidationInfo
+      type: object
