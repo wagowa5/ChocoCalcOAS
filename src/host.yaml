@@ -39,24 +39,24 @@ paths:
     $ref: "operations/item/vita/int.yaml"
   /api/vita/spd:
     $ref: "operations/item/vita/spd.yaml"
-  # /api/vita/vit:
-  #   $ref: "operations/item/vita/vit.yaml"
-  # /api/vita/luk:
-  #   $ref: "operations/item/vita/luk.yaml"
+  /api/vita/vit:
+    $ref: "operations/item/vita/vit.yaml"
+  /api/vita/luk:
+    $ref: "operations/item/vita/luk.yaml"
   
   # # 巻物
   # /api/item/scroll:
-  #   $ref: "operations/scroll/scroll.yaml"
+  #   $ref: "operations/item/scroll/scroll.yaml"
 
   # リキッド
   /api/item/liquid/atk:
-    $ref: "operations/liquid/atk.yaml"
+    $ref: "operations/item/liquid/atk.yaml"
   /api/item/liquid/def:
-    $ref: "operations/liquid/def.yaml"
+    $ref: "operations/item/liquid/def.yaml"
   /api/item/liquid/mat:
-    $ref: "operations/liquid/mat.yaml"
+    $ref: "operations/item/liquid/mat.yaml"
   /api/item/liquid/mdf:
-    $ref: "operations/liquid/mdf.yaml"
+    $ref: "operations/item/liquid/mdf.yaml"
   
   # 特殊スキル
   # /api/skill/special/eru:
