@@ -34,8 +34,8 @@ java -jar ${JAR_PATH} generate \
 	-o ./dist
 
 ## validation
-#java -jar ${JAR_PATH} validate 
-#  -i ./dist/openapi/openapi.yaml
+java -jar ${JAR_PATH} validate 
+  -i ./dist/openapi/openapi.yaml
 
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
