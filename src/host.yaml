@@ -23,25 +23,25 @@ paths:
   
   # TODO ステータス振り分け, ロイヤル, ヘアメイクステ
   # 職業操作
-  /api/job:
+  /api/user/job:
     $ref: "operations/user/job/job.yaml"
 
   # 魔獣缶・シール
-  /api/can:
+  /api/item/can:
     $ref: "operations/item/can/can.yaml"
 
   # ビタ
-  /api/vita/all:
+  /api/item/vita/all:
     $ref: "operations/item/vita/all.yaml"
-  /api/vita/pow:
+  /api/item/vita/pow:
     $ref: "operations/item/vita/pow.yaml"
-  /api/vita/int:
+  /api/item/vita/int:
     $ref: "operations/item/vita/int.yaml"
-  /api/vita/spd:
+  /api/item/vita/spd:
     $ref: "operations/item/vita/spd.yaml"
-  /api/vita/vit:
+  /api/item/vita/vit:
     $ref: "operations/item/vita/vit.yaml"
-  /api/vita/luk:
+  /api/item/vita/luk:
     $ref: "operations/item/vita/luk.yaml"
   
   # # 巻物
