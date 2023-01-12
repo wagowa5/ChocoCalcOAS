@@ -39,12 +39,12 @@ abstract class ApiApiBaseController {
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/can"],
+     *   value = ["/api/item/can"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiCanPost(): kotlin.String
+    abstract fun apiItemCanPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
@@ -89,22 +89,62 @@ abstract class ApiApiBaseController {
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/job"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.GET])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiJobGet(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/job"],
+     *   value = ["/api/item/vita/all"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiJobPost(): kotlin.String
+    abstract fun apiItemVitaAllPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/int"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaIntPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/luk"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaLukPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/pow"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaPowPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/spd"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaSpdPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/vit"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaVitPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
@@ -119,71 +159,31 @@ abstract class ApiApiBaseController {
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
+     *   value = ["/api/user/job"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.GET])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiUserJobGet(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/user/job"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiUserJobPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
      *   value = ["/api/user"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
     abstract fun apiUserPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/vita/all"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiVitaAllPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/vita/int"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiVitaIntPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/vita/luk"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiVitaLukPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/vita/pow"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiVitaPowPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/vita/spd"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiVitaSpdPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/vita/vit"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiVitaVitPost(): kotlin.String
 
 }
