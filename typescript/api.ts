@@ -132,8 +132,8 @@ export const ItemApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidAtkPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/liquid/atk`;
+        apiItemLiquidAtkPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/item/liquid/atk`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -162,8 +162,8 @@ export const ItemApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidDefPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/liquid/def`;
+        apiItemLiquidDefPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/item/liquid/def`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -192,8 +192,8 @@ export const ItemApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidMatPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/liquid/mat`;
+        apiItemLiquidMatPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/item/liquid/mat`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -222,8 +222,8 @@ export const ItemApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidMdfPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
-            const localVarPath = `/api/liquid/mdf`;
+        apiItemLiquidMdfPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/item/liquid/mdf`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -307,6 +307,36 @@ export const ItemApiAxiosParamCreator = function (configuration?: Configuration)
             };
         },
         /**
+         * LUKビタを使用 
+         * @summary LUKビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiVitaLukPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/vita/luk`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
          * POWビタを使用 
          * @summary POWビタを使用
          * @param {*} [options] Override http request option.
@@ -314,6 +344,66 @@ export const ItemApiAxiosParamCreator = function (configuration?: Configuration)
          */
         apiVitaPowPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/vita/pow`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * SPDビタを使用 
+         * @summary SPDビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiVitaSpdPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/vita/spd`;
+            // use dummy base URL string because the URL constructor only accepts absolute URLs.
+            const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
+            let baseOptions;
+            if (configuration) {
+                baseOptions = configuration.baseOptions;
+            }
+
+            const localVarRequestOptions = { method: 'POST', ...baseOptions, ...options};
+            const localVarHeaderParameter = {} as any;
+            const localVarQueryParameter = {} as any;
+
+
+    
+            setSearchParams(localVarUrlObj, localVarQueryParameter);
+            let headersFromBaseOptions = baseOptions && baseOptions.headers ? baseOptions.headers : {};
+            localVarRequestOptions.headers = {...localVarHeaderParameter, ...headersFromBaseOptions, ...options.headers};
+
+            return {
+                url: toPathString(localVarUrlObj),
+                options: localVarRequestOptions,
+            };
+        },
+        /**
+         * VITビタを使用 
+         * @summary VITビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiVitaVitPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+            const localVarPath = `/api/vita/vit`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
             let baseOptions;
@@ -362,8 +452,8 @@ export const ItemApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiLiquidAtkPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiLiquidAtkPost(options);
+        async apiItemLiquidAtkPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiItemLiquidAtkPost(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -372,8 +462,8 @@ export const ItemApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiLiquidDefPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiLiquidDefPost(options);
+        async apiItemLiquidDefPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiItemLiquidDefPost(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -382,8 +472,8 @@ export const ItemApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiLiquidMatPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiLiquidMatPost(options);
+        async apiItemLiquidMatPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiItemLiquidMatPost(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -392,8 +482,8 @@ export const ItemApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiLiquidMdfPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiLiquidMdfPost(options);
+        async apiItemLiquidMdfPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiItemLiquidMdfPost(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -417,6 +507,16 @@ export const ItemApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
+         * LUKビタを使用 
+         * @summary LUKビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiVitaLukPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiVitaLukPost(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
          * POWビタを使用 
          * @summary POWビタを使用
          * @param {*} [options] Override http request option.
@@ -424,6 +524,26 @@ export const ItemApiFp = function(configuration?: Configuration) {
          */
         async apiVitaPowPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.apiVitaPowPost(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * SPDビタを使用 
+         * @summary SPDビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiVitaSpdPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiVitaSpdPost(options);
+            return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
+        },
+        /**
+         * VITビタを使用 
+         * @summary VITビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        async apiVitaVitPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.apiVitaVitPost(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -451,8 +571,8 @@ export const ItemApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidAtkPost(options?: any): AxiosPromise<string> {
-            return localVarFp.apiLiquidAtkPost(options).then((request) => request(axios, basePath));
+        apiItemLiquidAtkPost(options?: any): AxiosPromise<string> {
+            return localVarFp.apiItemLiquidAtkPost(options).then((request) => request(axios, basePath));
         },
         /**
          * マモールリキッドを使用 
@@ -460,8 +580,8 @@ export const ItemApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidDefPost(options?: any): AxiosPromise<string> {
-            return localVarFp.apiLiquidDefPost(options).then((request) => request(axios, basePath));
+        apiItemLiquidDefPost(options?: any): AxiosPromise<string> {
+            return localVarFp.apiItemLiquidDefPost(options).then((request) => request(axios, basePath));
         },
         /**
          * マホアタリキッドを使用 
@@ -469,8 +589,8 @@ export const ItemApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidMatPost(options?: any): AxiosPromise<string> {
-            return localVarFp.apiLiquidMatPost(options).then((request) => request(axios, basePath));
+        apiItemLiquidMatPost(options?: any): AxiosPromise<string> {
+            return localVarFp.apiItemLiquidMatPost(options).then((request) => request(axios, basePath));
         },
         /**
          * マホマモリキッドを使用 
@@ -478,8 +598,8 @@ export const ItemApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiLiquidMdfPost(options?: any): AxiosPromise<string> {
-            return localVarFp.apiLiquidMdfPost(options).then((request) => request(axios, basePath));
+        apiItemLiquidMdfPost(options?: any): AxiosPromise<string> {
+            return localVarFp.apiItemLiquidMdfPost(options).then((request) => request(axios, basePath));
         },
         /**
          * ALLビタを使用 
@@ -500,6 +620,15 @@ export const ItemApiFactory = function (configuration?: Configuration, basePath?
             return localVarFp.apiVitaIntPost(options).then((request) => request(axios, basePath));
         },
         /**
+         * LUKビタを使用 
+         * @summary LUKビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiVitaLukPost(options?: any): AxiosPromise<string> {
+            return localVarFp.apiVitaLukPost(options).then((request) => request(axios, basePath));
+        },
+        /**
          * POWビタを使用 
          * @summary POWビタを使用
          * @param {*} [options] Override http request option.
@@ -507,6 +636,24 @@ export const ItemApiFactory = function (configuration?: Configuration, basePath?
          */
         apiVitaPowPost(options?: any): AxiosPromise<string> {
             return localVarFp.apiVitaPowPost(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * SPDビタを使用 
+         * @summary SPDビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiVitaSpdPost(options?: any): AxiosPromise<string> {
+            return localVarFp.apiVitaSpdPost(options).then((request) => request(axios, basePath));
+        },
+        /**
+         * VITビタを使用 
+         * @summary VITビタを使用
+         * @param {*} [options] Override http request option.
+         * @throws {RequiredError}
+         */
+        apiVitaVitPost(options?: any): AxiosPromise<string> {
+            return localVarFp.apiVitaVitPost(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -536,8 +683,8 @@ export class ItemApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ItemApi
      */
-    public apiLiquidAtkPost(options?: AxiosRequestConfig) {
-        return ItemApiFp(this.configuration).apiLiquidAtkPost(options).then((request) => request(this.axios, this.basePath));
+    public apiItemLiquidAtkPost(options?: AxiosRequestConfig) {
+        return ItemApiFp(this.configuration).apiItemLiquidAtkPost(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -547,8 +694,8 @@ export class ItemApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ItemApi
      */
-    public apiLiquidDefPost(options?: AxiosRequestConfig) {
-        return ItemApiFp(this.configuration).apiLiquidDefPost(options).then((request) => request(this.axios, this.basePath));
+    public apiItemLiquidDefPost(options?: AxiosRequestConfig) {
+        return ItemApiFp(this.configuration).apiItemLiquidDefPost(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -558,8 +705,8 @@ export class ItemApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ItemApi
      */
-    public apiLiquidMatPost(options?: AxiosRequestConfig) {
-        return ItemApiFp(this.configuration).apiLiquidMatPost(options).then((request) => request(this.axios, this.basePath));
+    public apiItemLiquidMatPost(options?: AxiosRequestConfig) {
+        return ItemApiFp(this.configuration).apiItemLiquidMatPost(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -569,8 +716,8 @@ export class ItemApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof ItemApi
      */
-    public apiLiquidMdfPost(options?: AxiosRequestConfig) {
-        return ItemApiFp(this.configuration).apiLiquidMdfPost(options).then((request) => request(this.axios, this.basePath));
+    public apiItemLiquidMdfPost(options?: AxiosRequestConfig) {
+        return ItemApiFp(this.configuration).apiItemLiquidMdfPost(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -596,6 +743,17 @@ export class ItemApi extends BaseAPI {
     }
 
     /**
+     * LUKビタを使用 
+     * @summary LUKビタを使用
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemApi
+     */
+    public apiVitaLukPost(options?: AxiosRequestConfig) {
+        return ItemApiFp(this.configuration).apiVitaLukPost(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
      * POWビタを使用 
      * @summary POWビタを使用
      * @param {*} [options] Override http request option.
@@ -604,6 +762,28 @@ export class ItemApi extends BaseAPI {
      */
     public apiVitaPowPost(options?: AxiosRequestConfig) {
         return ItemApiFp(this.configuration).apiVitaPowPost(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * SPDビタを使用 
+     * @summary SPDビタを使用
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemApi
+     */
+    public apiVitaSpdPost(options?: AxiosRequestConfig) {
+        return ItemApiFp(this.configuration).apiVitaSpdPost(options).then((request) => request(this.axios, this.basePath));
+    }
+
+    /**
+     * VITビタを使用 
+     * @summary VITビタを使用
+     * @param {*} [options] Override http request option.
+     * @throws {RequiredError}
+     * @memberof ItemApi
+     */
+    public apiVitaVitPost(options?: AxiosRequestConfig) {
+        return ItemApiFp(this.configuration).apiVitaVitPost(options).then((request) => request(this.axios, this.basePath));
     }
 }
 

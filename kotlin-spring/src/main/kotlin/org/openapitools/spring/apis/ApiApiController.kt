@@ -49,6 +49,46 @@ abstract class ApiApiBaseController {
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
+     *   value = ["/api/item/liquid/atk"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidAtkPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/liquid/def"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidDefPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/liquid/mat"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidMatPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/liquid/mdf"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidMdfPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
      *   value = ["/api/job"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.GET])
@@ -65,46 +105,6 @@ abstract class ApiApiBaseController {
      * @ResponseStatus(HttpStatus.OK)
      */
     abstract fun apiJobPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/liquid/atk"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiLiquidAtkPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/liquid/def"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiLiquidDefPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/liquid/mat"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiLiquidMatPost(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/liquid/mdf"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.POST])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiLiquidMdfPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
@@ -149,11 +149,41 @@ abstract class ApiApiBaseController {
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
+     *   value = ["/api/vita/luk"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiVitaLukPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
      *   value = ["/api/vita/pow"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
     abstract fun apiVitaPowPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/vita/spd"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiVitaSpdPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/vita/vit"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiVitaVitPost(): kotlin.String
 
 }
