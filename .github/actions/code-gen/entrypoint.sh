@@ -40,7 +40,7 @@ java -jar ${JAR_PATH} generate \
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
   -i ./dist/openapi/openapi.yaml \
-  -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
+  -g kotlin-spring \
   -t ./config/spring/mustache \
   -c ./config/spring/config.yaml \
   -o ./kotlin-spring \
