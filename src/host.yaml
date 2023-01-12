@@ -35,18 +35,18 @@ paths:
     $ref: "operations/vita/all.yaml"
   /api/vita/pow:
     $ref: "operations/vita/pow.yaml"
-  /api/vita/int:
-    $ref: "operations/vita/int.yaml"
-  /api/vita/spd:
-    $ref: "operations/vita/spd.yaml"
-  /api/vita/vit:
-    $ref: "operations/vita/vit.yaml"
-  /api/vita/luk:
-    $ref: "operations/vita/luk.yaml"
+  # /api/vita/int:
+  #   $ref: "operations/vita/int.yaml"
+  # /api/vita/spd:
+  #   $ref: "operations/vita/spd.yaml"
+  # /api/vita/vit:
+  #   $ref: "operations/vita/vit.yaml"
+  # /api/vita/luk:
+  #   $ref: "operations/vita/luk.yaml"
   
-  # 巻物
-  /api/scroll:
-    $ref: "operations/scroll/scroll.yaml"
+  # # 巻物
+  # /api/scroll:
+  #   $ref: "operations/scroll/scroll.yaml"
 
   # リキッド
   /api/liquid/atk:
@@ -59,24 +59,24 @@ paths:
     $ref: "operations/liquid/mdf.yaml"
   
   # 特殊スキル
-  /api/skill/special/eru:
-    $ref: "operations/skill/special/eru.yaml"
-  /api/skill/special/fairyP:
-    $ref: "operations/skill/special/fairyP.yaml"
-  /api/skill/special/fairyM:
-    $ref: "operations/skill/special/fairyM.yaml"
-  /api/skill/special/bene:
-    $ref: "operations/skill/special/bene.yaml" 
-  /api/skill/special/fis:
-    $ref: "operations/skill/special/fis.yaml"
-  /api/skill/special/sira:
-    $ref: "operations/skill/special/sira.yaml"
-  /api/skill/special/retro:
-    $ref: "operations/skill/special/retro.yaml"
+  # /api/skill/special/eru:
+  #   $ref: "operations/skill/special/eru.yaml"
+  # /api/skill/special/fairyP:
+  #   $ref: "operations/skill/special/fairyP.yaml"
+  # /api/skill/special/fairyM:
+  #   $ref: "operations/skill/special/fairyM.yaml"
+  # /api/skill/special/bene:
+  #   $ref: "operations/skill/special/bene.yaml" 
+  # /api/skill/special/fis:
+  #   $ref: "operations/skill/special/fis.yaml"
+  # /api/skill/special/sira:
+  #   $ref: "operations/skill/special/sira.yaml"
+  # /api/skill/special/retro:
+  #   $ref: "operations/skill/special/retro.yaml"
 
-  # 通常スキル
-  /api/skill/normal/bradscraper:
-    $ref: "operations/skill/normal/bradscraper.yaml"
+  # # 通常スキル
+  # /api/skill/normal/bradscraper:
+  #   $ref: "operations/skill/normal/bradscraper.yaml"
 
   # TODO ペットスキルも追加する
 
@@ -106,44 +106,44 @@ paths:
   #    summary: マネキン一覧取得
 
   # マネキン
-  /api/manekin/main:
-    $ref: "operations/manekin/main_manekin.yaml"
-  /api/manekin/main/{manekinName}:
-    $ref: "operations/manekin/main_manekin_call.yaml"
-  /api/manekin/sub:
-    $ref: "operations/manekin/sub_manekin.yaml"
-  /api/manekin/sub/{manekinName}:
-    $ref: "operations/manekin/sub_manekin.yaml"
-  /api/manekin/ava:
-    $ref: "operations/manekin/ava_manekin.yaml"
-  /api/manekin/ava/{manekinName}:
-    $ref: "operations/manekin/ava_manekin_call.yaml"
+  # /api/manekin/main:
+  #   $ref: "operations/manekin/main_manekin.yaml"
+  # /api/manekin/main/{manekinName}:
+  #   $ref: "operations/manekin/main_manekin_call.yaml"
+  # /api/manekin/sub:
+  #   $ref: "operations/manekin/sub_manekin.yaml"
+  # /api/manekin/sub/{manekinName}:
+  #   $ref: "operations/manekin/sub_manekin.yaml"
+  # /api/manekin/ava:
+  #   $ref: "operations/manekin/ava_manekin.yaml"
+  # /api/manekin/ava/{manekinName}:
+  #   $ref: "operations/manekin/ava_manekin_call.yaml"
 
   # TODO 装備・アバ定義してからマネキン定義する
   # 装備
-  /api/equip/weapon:
-    $ref: "operations/equip/weapon.yaml"
-  /api/equip/head:
-    $ref: "operations/equip/head.yaml"
-  /api/equip/chest:
-    $ref: "operations/equip/chest.yaml"
-  /api/equip/back:
-    $ref: "operations/equip/back.yaml"
-  /api/equip/shield:
-    $ref: "operations/equip/shield.yaml"
-  /api/equip/neck:
-    $ref: "operations/equip/neck.yaml"
-  /api/equip/hand:
-    $ref: "operations/equip/hand.yaml"
-  /api/equip/foot:
-    $ref: "operations/equip/foot.yaml"
+  # /api/equip/weapon:
+  #   $ref: "operations/equip/weapon.yaml"
+  # /api/equip/head:
+  #   $ref: "operations/equip/head.yaml"
+  # /api/equip/chest:
+  #   $ref: "operations/equip/chest.yaml"
+  # /api/equip/back:
+  #   $ref: "operations/equip/back.yaml"
+  # /api/equip/shield:
+  #   $ref: "operations/equip/shield.yaml"
+  # /api/equip/neck:
+  #   $ref: "operations/equip/neck.yaml"
+  # /api/equip/hand:
+  #   $ref: "operations/equip/hand.yaml"
+  # /api/equip/foot:
+  #   $ref: "operations/equip/foot.yaml"
 
-  # TODO 部位ごとに追加する
-  # アイテムバッグ
-  /api/itembag/equip/weapon:
-    $ref: "operations/itembag/equip/weapon.yaml"
-  /api/itembag/equip/head:
-    $ref: "operations/itembag/equip/head.yaml"
+  # # TODO 部位ごとに追加する
+  # # アイテムバッグ
+  # /api/itembag/equip/weapon:
+  #   $ref: "operations/itembag/equip/weapon.yaml"
+  # /api/itembag/equip/head:
+  #   $ref: "operations/itembag/equip/head.yaml"
   #/api/itembag/equip/chest:
   #/api/itembag/equip/back:
   #/api/itembag/equip/shield:
