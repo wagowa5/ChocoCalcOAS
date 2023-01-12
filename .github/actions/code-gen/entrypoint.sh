@@ -22,16 +22,15 @@ git checkout $GIT_BRANCH
 export JAR_PATH=./bin/openapi-generator-cli-6.2.1.jar
 
 ## remove old generated code
-#rm -rf \
-  #kotlin-spring \
-  #typescript \
-  #multiplatform \
-  #dist
+rm -rf \
+  kotlin-spring \
+  typescript \
+  dist
 
 ## generate merged oas.yaml
 java -jar ${JAR_PATH} generate \
-	-g openapi-yaml \
 	-i ./src/host.yaml \
+  -g openapi-yaml \
 	-o ./dist
 
 ## validation
@@ -40,10 +39,10 @@ java -jar ${JAR_PATH} validate
 
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
+  -i ./dist/openapi/openapi.yaml \
   -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
   -t ./config/spring/mustache \
   -c ./config/spring/config.yaml \
-  -i ./dist/openapi/openapi.yaml \
   -o ./kotlin-spring \
   --skip-validate-spec
 
@@ -55,10 +54,6 @@ rm -rf kotlin-spring/docs \
   kotlin-spring/src/main/kotlin/org/openapitools/Application.kt \
   kotlin-spring/src/main/kotlin/org/openapitools/spring/apis/ApiUtil.kt \
   kotlin-spring/src/test
-
-## generate multiplatform
-#java -jar ${JAR_PATH} generate -i ./dist/openapi/openapi.yaml -g kotlin -o multiplatform --library multiplatform
-#rm -rf multiplatform/docs
 
 ## generate typescript
 java -jar ${JAR_PATH} generate \
