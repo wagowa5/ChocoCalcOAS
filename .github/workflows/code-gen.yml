@@ -28,8 +28,8 @@ jobs:
         run: |
           sh ./.github/actions/code-gen/entrypoint.sh
 #          sh ./.github/actions/mock-json-gen/entrypoint.sh
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 # This is a basic workflow to help you get started with Actions
 

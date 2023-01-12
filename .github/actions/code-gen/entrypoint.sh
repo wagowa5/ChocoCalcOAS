@@ -11,7 +11,7 @@ if [ "$GIT_BRANCH" = "" ] ; then
   export GIT_BRANCH=${GIT_BRANCH#remotes/origin/};
 fi
 
-git remote set-url origin https://wagowa5@github.com/${GITHUB_REPOSITORY}.git
+git remote set-url origin https://${GITHUB_TOKEN}github.com/${GITHUB_REPOSITORY}.git
 git checkout $GIT_BRANCH
 
 # バージョンが上がればv*.*.*を変更する
