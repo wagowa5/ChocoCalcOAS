@@ -1,0 +1,16 @@
+groupId: org.openapitools.spring
+artifactId: org.openapitools.spring
+artifactVersion: 1.0.0
+packageName: org.openapitools.spring
+apiPackage: org.openapitools.spring.apis
+modelPackage: org.openapitools.spring.models
+enablePostProcessFile: true
+useBeanValidation: true
+serializationLibrary: moshi
+moshiCodeGen: true
+enumPropertyNaming: UPPERCASE
+sortParamsByRequiredFlag: rue
+sortModelPropertiesByRequiredFlag: true
+dateLibrary: java8
+requestDateConverter: toJson
+reactive: false
