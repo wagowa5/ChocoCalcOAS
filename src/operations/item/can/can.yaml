@@ -6,7 +6,7 @@ post:
     魔獣缶・シールを使用
   security:
     - bearerAuth: []
-  # TODO コメント2
+  # TODO コメント3
   #parameters:
   #  - $ref: "#/components/parameters/canType"
   #requestBody:
