@@ -12,13 +12,13 @@ post:
       content:
         application/json:
           schema:
-            $ref: "#/components/schemas/CharacterInfo"
+            $ref: "../../components/response/character_info.yaml#/components/schemas/CharacterInfo"
     "400":
-      $ref: "#/components/responses/BadRequestError"
+      $ref: "../../components/response/error.yaml#/components/responses/BadRequestError"
     "401":
-      $ref: "#/components/responses/UnauthorizedError"
+      $ref: "../../components/response/error.yaml#/components/responses/UnauthorizedError"
     "408":
-      $ref: "#/components/responses/RequestTimeoutError"
+      $ref: "../../components/response/error.yaml#/components/responses/RequestTimeoutError"
     "500":
-      $ref: "#/components/responses/SystemError"
+      $ref: "../../components/response/error.yaml#/components/responses/SystemError"
     
