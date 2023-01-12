@@ -24,38 +24,38 @@ paths:
   # TODO ステータス振り分け, ロイヤル, ヘアメイクステ
   # 職業操作
   /api/job:
-    $ref: "operations/job/job.yaml"
+    $ref: "operations/user/job/job.yaml"
 
   # 魔獣缶・シール
   /api/can:
-    $ref: "operations/can/can.yaml"
+    $ref: "operations/item/can/can.yaml"
 
   # ビタ
   /api/vita/all:
-    $ref: "operations/vita/all.yaml"
+    $ref: "operations/item/vita/all.yaml"
   /api/vita/pow:
-    $ref: "operations/vita/pow.yaml"
+    $ref: "operations/item/vita/pow.yaml"
   /api/vita/int:
-    $ref: "operations/vita/int.yaml"
-  # /api/vita/spd:
-  #   $ref: "operations/vita/spd.yaml"
+    $ref: "operations/item/vita/int.yaml"
+  /api/vita/spd:
+    $ref: "operations/item/vita/spd.yaml"
   # /api/vita/vit:
-  #   $ref: "operations/vita/vit.yaml"
+  #   $ref: "operations/item/vita/vit.yaml"
   # /api/vita/luk:
-  #   $ref: "operations/vita/luk.yaml"
+  #   $ref: "operations/item/vita/luk.yaml"
   
   # # 巻物
-  # /api/scroll:
+  # /api/item/scroll:
   #   $ref: "operations/scroll/scroll.yaml"
 
   # リキッド
-  /api/liquid/atk:
+  /api/item/liquid/atk:
     $ref: "operations/liquid/atk.yaml"
-  /api/liquid/def:
+  /api/item/liquid/def:
     $ref: "operations/liquid/def.yaml"
-  /api/liquid/mat:
+  /api/item/liquid/mat:
     $ref: "operations/liquid/mat.yaml"
-  /api/liquid/mdf:
+  /api/item/liquid/mdf:
     $ref: "operations/liquid/mdf.yaml"
   
   # 特殊スキル
