@@ -40,7 +40,7 @@ java -jar ${JAR_PATH} generate \
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
   -i ./dist/openapi/openapi.yaml \
-  -g kotlin-spring \
+  -g ./kotlin-spring \
   -t ./config/spring/mustache
   #-c ./config/spring/config.yaml \
   #-o kotlin-spring \
@@ -63,7 +63,7 @@ java -jar ${JAR_PATH} generate \
   -o typescript
 
 ## remove all README.md
-find kotlin-spring typescript -name "README.md" | xargs rm
+find ./kotlin-spring typescript -name "README.md" | xargs rm
 
 # ignore no diff
 set +e
