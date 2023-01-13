@@ -41,7 +41,7 @@ java -jar ${JAR_PATH} generate \
 java -jar ${JAR_PATH} generate \
   -i ./dist/openapi/openapi.yaml \
   -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
-  #-t ./config/spring/mustache
+  -t ./config/spring/mustache
   #-c ./config/spring/config.yaml \
   -o kotlin-spring \
   --skip-validate-spec
