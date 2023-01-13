@@ -40,11 +40,11 @@ java -jar ${JAR_PATH} generate \
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
   -i ./dist/openapi/openapi.yaml \
-  -g kotlin-spring
+  -g org.openapitools.codegen.languages.TlbKotlinSpringServerCodegen \
   #-t ./config/spring/mustache
   #-c ./config/spring/config.yaml \
-  #-o kotlin-spring \
-  #--skip-validate-spec
+  -o kotlin-spring \
+  --skip-validate-spec
 
 rm -rf kotlin-spring/docs \
   kotlin-spring/build.gradle.kts \
