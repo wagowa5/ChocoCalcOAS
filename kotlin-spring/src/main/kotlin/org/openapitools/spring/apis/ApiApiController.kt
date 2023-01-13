@@ -35,7 +35,7 @@ import kotlin.collections.Map
  * @Validated
  * @RequestMapping("\${api.base-path:}")
  */
-abstract class ApiApiBaseController {
+abstract class BaseController {
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
