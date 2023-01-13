@@ -1,4 +1,5 @@
 get:
+  oprations: user
   classname: user
   tags:
     - user
@@ -22,6 +23,7 @@ get:
       $ref: "../../components/response/error.yaml#/components/responses/SystemError"
 
 post:
+  oprations: user
   classname: user
   tags:
     - user
