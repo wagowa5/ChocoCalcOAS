@@ -1,6 +1,4 @@
 get:
-  operations: user
-  classname: user
   tags:
     - user
   summary: user情報読み込み
@@ -23,8 +21,6 @@ get:
       $ref: "../../components/response/error.yaml#/components/responses/SystemError"
 
 post:
-  operations: user
-  classname: user
   tags:
     - user
   summary: user情報登録
