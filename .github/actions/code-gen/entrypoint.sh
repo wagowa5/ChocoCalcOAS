@@ -63,7 +63,7 @@ java -jar ${JAR_PATH} generate \
   -o typescript
 
 ## remove all README.md
-find ./kotlin-spring typescript -name "README.md" | xargs rm
+find kotlin-spring typescript -name "README.md" | xargs rm
 
 # ignore no diff
 set +e
