@@ -1,5 +1,4 @@
 get:
-  operationsId: user
   tags:
     - user
   summary: user情報読み込み

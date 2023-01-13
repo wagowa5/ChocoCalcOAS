@@ -57,7 +57,7 @@ import kotlin.collections.Map
 @Api(value = "{{{baseName}}}", description = "The {{{baseName}}} API")
 {{/swaggerAnnotations}}
 {{#operations}}
-abstract class {{operationsId}}BaseController {
+abstract class {{classname}}BaseController {
 {{#operation}}
     /**
      * 実装クラスに持っていく
