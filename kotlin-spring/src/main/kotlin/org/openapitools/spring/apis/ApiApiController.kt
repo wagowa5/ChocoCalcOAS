@@ -154,7 +154,7 @@ abstract class ApiApiBaseController {
      *   method = [RequestMethod.GET])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun userGet(): kotlin.String
+    abstract fun apiUserGet(): kotlin.String
 
     /**
      * 実装クラスに持っていく
@@ -164,7 +164,7 @@ abstract class ApiApiBaseController {
      *   method = [RequestMethod.GET])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun userJobGet(): kotlin.String
+    abstract fun apiUserJobGet(): kotlin.String
 
     /**
      * 実装クラスに持っていく
@@ -174,7 +174,7 @@ abstract class ApiApiBaseController {
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun userJobPost(): kotlin.String
+    abstract fun apiUserJobPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
@@ -184,6 +184,6 @@ abstract class ApiApiBaseController {
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun userPost(): kotlin.String
+    abstract fun apiUserPost(): kotlin.String
 
 }

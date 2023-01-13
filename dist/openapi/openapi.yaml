@@ -14,7 +14,6 @@ servers:
 paths:
   /api/user:
     get:
-      operationId: userGet
       responses:
         "200":
           content:
@@ -52,7 +51,6 @@ paths:
       tags:
       - user
     post:
-      operationId: userPost
       responses:
         "200":
           content:
@@ -91,7 +89,6 @@ paths:
       - user
   /api/user/job:
     get:
-      operationId: userJobGet
       responses:
         "200":
           content:
@@ -129,7 +126,6 @@ paths:
       tags:
       - job
     post:
-      operationId: userJobPost
       responses:
         "200":
           content:
