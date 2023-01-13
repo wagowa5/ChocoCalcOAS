@@ -41,10 +41,10 @@ java -jar ${JAR_PATH} generate \
 java -jar ${JAR_PATH} generate \
   -i ./dist/openapi/openapi.yaml \
   -g kotlin-spring \
-  -t ./config/spring/mustache \
+  -t ./config/spring/mustache
   #-c ./config/spring/config.yaml \
   #-o kotlin-spring \
-  --skip-validate-spec
+  #--skip-validate-spec
 
 rm -rf kotlin-spring/docs \
   kotlin-spring/build.gradle.kts \
