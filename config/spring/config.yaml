@@ -1,3 +1,5 @@
+operations :
+  classname: "DefaltApi"
 additionalProperties:
   artifactId: org.openapitools.spring
   packageName: org.openapitools.spring
