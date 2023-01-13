@@ -56,9 +56,9 @@ import kotlin.collections.Map
 {{#swaggerAnnotations}}
 @Api(value = "{{{baseName}}}", description = "The {{{baseName}}} API")
 {{/swaggerAnnotations}}
-{{#operations}}
+{{#apis}}
 abstract class {{classname}}BaseController {
-{{#operation}}
+{{#api}}
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
@@ -71,6 +71,6 @@ abstract class {{classname}}BaseController {
      * @ResponseStatus(HttpStatus.OK)
      */
     abstract {{#reactive}}suspend {{/reactive}}fun {{operationId}}({{#allParams}}{{>queryParams}}{{>pathParams}}{{>headerParams}}{{>bodyParams}}{{>formParams}}{{#hasMore}},{{/hasMore}}{{/allParams}}): {{>returnTypes}}
-{{/operation}}
+{{/api}}
 }
-{{/operations}}
+{{/apis}}
