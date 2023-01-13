@@ -15,5 +15,4 @@ additionalProperties:
   sortModelPropertiesByRequiredFlag: true
   requestDateConverter: toJson
   reactive: false
-  operations :
-    classname: "DefaltApi"
+  classname: operation
