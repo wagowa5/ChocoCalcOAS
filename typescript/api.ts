@@ -800,7 +800,7 @@ export const JobApiAxiosParamCreator = function (configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserJobGet: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        userJobGet: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/user/job`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -830,7 +830,7 @@ export const JobApiAxiosParamCreator = function (configuration?: Configuration) 
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserJobPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        userJobPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/user/job`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -870,8 +870,8 @@ export const JobApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiUserJobGet(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiUserJobGet(options);
+        async userJobGet(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userJobGet(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -880,8 +880,8 @@ export const JobApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiUserJobPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiUserJobPost(options);
+        async userJobPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userJobPost(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -900,8 +900,8 @@ export const JobApiFactory = function (configuration?: Configuration, basePath?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserJobGet(options?: any): AxiosPromise<string> {
-            return localVarFp.apiUserJobGet(options).then((request) => request(axios, basePath));
+        userJobGet(options?: any): AxiosPromise<string> {
+            return localVarFp.userJobGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -909,8 +909,8 @@ export const JobApiFactory = function (configuration?: Configuration, basePath?:
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserJobPost(options?: any): AxiosPromise<string> {
-            return localVarFp.apiUserJobPost(options).then((request) => request(axios, basePath));
+        userJobPost(options?: any): AxiosPromise<string> {
+            return localVarFp.userJobPost(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -929,8 +929,8 @@ export class JobApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof JobApi
      */
-    public apiUserJobGet(options?: AxiosRequestConfig) {
-        return JobApiFp(this.configuration).apiUserJobGet(options).then((request) => request(this.axios, this.basePath));
+    public userJobGet(options?: AxiosRequestConfig) {
+        return JobApiFp(this.configuration).userJobGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -940,8 +940,8 @@ export class JobApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof JobApi
      */
-    public apiUserJobPost(options?: AxiosRequestConfig) {
-        return JobApiFp(this.configuration).apiUserJobPost(options).then((request) => request(this.axios, this.basePath));
+    public userJobPost(options?: AxiosRequestConfig) {
+        return JobApiFp(this.configuration).userJobPost(options).then((request) => request(this.axios, this.basePath));
     }
 }
 
@@ -958,7 +958,7 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserGet: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        userGet: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/user`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -988,7 +988,7 @@ export const UserApiAxiosParamCreator = function (configuration?: Configuration)
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
+        userPost: async (options: AxiosRequestConfig = {}): Promise<RequestArgs> => {
             const localVarPath = `/api/user`;
             // use dummy base URL string because the URL constructor only accepts absolute URLs.
             const localVarUrlObj = new URL(localVarPath, DUMMY_BASE_URL);
@@ -1028,8 +1028,8 @@ export const UserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiUserGet(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiUserGet(options);
+        async userGet(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userGet(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
@@ -1038,8 +1038,8 @@ export const UserApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async apiUserPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
-            const localVarAxiosArgs = await localVarAxiosParamCreator.apiUserPost(options);
+        async userPost(options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<string>> {
+            const localVarAxiosArgs = await localVarAxiosParamCreator.userPost(options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
     }
@@ -1058,8 +1058,8 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserGet(options?: any): AxiosPromise<string> {
-            return localVarFp.apiUserGet(options).then((request) => request(axios, basePath));
+        userGet(options?: any): AxiosPromise<string> {
+            return localVarFp.userGet(options).then((request) => request(axios, basePath));
         },
         /**
          * 
@@ -1067,8 +1067,8 @@ export const UserApiFactory = function (configuration?: Configuration, basePath?
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        apiUserPost(options?: any): AxiosPromise<string> {
-            return localVarFp.apiUserPost(options).then((request) => request(axios, basePath));
+        userPost(options?: any): AxiosPromise<string> {
+            return localVarFp.userPost(options).then((request) => request(axios, basePath));
         },
     };
 };
@@ -1087,8 +1087,8 @@ export class UserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserApi
      */
-    public apiUserGet(options?: AxiosRequestConfig) {
-        return UserApiFp(this.configuration).apiUserGet(options).then((request) => request(this.axios, this.basePath));
+    public userGet(options?: AxiosRequestConfig) {
+        return UserApiFp(this.configuration).userGet(options).then((request) => request(this.axios, this.basePath));
     }
 
     /**
@@ -1098,8 +1098,8 @@ export class UserApi extends BaseAPI {
      * @throws {RequiredError}
      * @memberof UserApi
      */
-    public apiUserPost(options?: AxiosRequestConfig) {
-        return UserApiFp(this.configuration).apiUserPost(options).then((request) => request(this.axios, this.basePath));
+    public userPost(options?: AxiosRequestConfig) {
+        return UserApiFp(this.configuration).userPost(options).then((request) => request(this.axios, this.basePath));
     }
 }
 
