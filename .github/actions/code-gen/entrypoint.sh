@@ -43,7 +43,7 @@ java -jar ${JAR_PATH} generate \
   -g kotlin-spring \
   -t ./config/spring/mustache \
   #-c ./config/spring/config.yaml \
-  -o kotlin-spring \
+  #-o kotlin-spring \
   --skip-validate-spec
 
 rm -rf kotlin-spring/docs \
