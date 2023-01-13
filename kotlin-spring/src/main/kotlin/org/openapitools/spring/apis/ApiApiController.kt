@@ -35,3 +35,5 @@ import kotlin.collections.Map
  * @Validated
  * @RequestMapping("\${api.base-path:}")
  */
+abstract class DefaltApiBaseController {
+}
