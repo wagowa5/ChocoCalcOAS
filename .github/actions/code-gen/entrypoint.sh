@@ -40,8 +40,8 @@ java -jar ${JAR_PATH} generate \
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
   -i ./dist/openapi/openapi.yaml \
-  -g kotlin-spring \
-  -t ./config/spring/mustache
+  -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
+  -t ./config/spring/mustache \
   -c ./config/spring/config.yaml \
   -o ./kotlin-spring \
   --skip-validate-spec
@@ -71,4 +71,3 @@ git add .
 git commit -m "add generated code"
 git push origin $GIT_BRANCH
 echo 'finish code-gen...'
-
