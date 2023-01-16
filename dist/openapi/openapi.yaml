@@ -87,7 +87,7 @@ paths:
       summary: user情報登録
       tags:
       - user
-  /api/job:
+  /api/user/job:
     get:
       responses:
         "200":
@@ -162,7 +162,7 @@ paths:
       summary: 職業情報登録
       tags:
       - job
-  /api/can:
+  /api/item/can:
     post:
       description: |
         魔獣缶・シールを使用
@@ -202,7 +202,7 @@ paths:
       summary: 魔獣缶・シールを使用
       tags:
       - item
-  /api/vita/all:
+  /api/item/vita/all:
     post:
       description: |
         ALLビタを使用
@@ -242,7 +242,7 @@ paths:
       summary: ALLビタを使用
       tags:
       - item
-  /api/vita/pow:
+  /api/item/vita/pow:
     post:
       description: |
         POWビタを使用
@@ -282,7 +282,7 @@ paths:
       summary: POWビタを使用
       tags:
       - item
-  /api/vita/int:
+  /api/item/vita/int:
     post:
       description: |
         INTビタを使用
@@ -322,7 +322,127 @@ paths:
       summary: INTビタを使用
       tags:
       - item
-  /api/liquid/atk:
+  /api/item/vita/spd:
+    post:
+      description: |
+        SPDビタを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: SPDビタを使用
+      tags:
+      - item
+  /api/item/vita/vit:
+    post:
+      description: |
+        VITビタを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: VITビタを使用
+      tags:
+      - item
+  /api/item/vita/luk:
+    post:
+      description: |
+        LUKビタを使用
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CharacterInfo'
+          description: OK
+        "400":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: リクエスト不正エラー
+        "401":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: 認証エラー
+        "408":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: TimeOutエラー
+        "500":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+          description: システムエラー
+      security:
+      - bearerAuth: []
+      summary: LUKビタを使用
+      tags:
+      - item
+  /api/item/liquid/atk:
     post:
       description: |
         アタークリキッドを使用
@@ -362,7 +482,7 @@ paths:
       summary: アタークリキッドを使用
       tags:
       - item
-  /api/liquid/def:
+  /api/item/liquid/def:
     post:
       description: |
         マモールリキッドを使用
@@ -402,7 +522,7 @@ paths:
       summary: マモールリキッドを使用
       tags:
       - item
-  /api/liquid/mat:
+  /api/item/liquid/mat:
     post:
       description: |
         マホアタリキッドを使用
@@ -442,7 +562,7 @@ paths:
       summary: マホアタリキッドを使用
       tags:
       - item
-  /api/liquid/mdf:
+  /api/item/liquid/mdf:
     post:
       description: |
         マホマモリキッドを使用

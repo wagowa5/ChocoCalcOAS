@@ -6,6 +6,7 @@ post:
     魔獣缶・シールを使用
   security:
     - bearerAuth: []
+  # TODO コメント3
   #parameters:
   #  - $ref: "#/components/parameters/canType"
   #requestBody:
@@ -20,14 +21,14 @@ post:
       content:
         application/json:
           schema:
-            $ref: "../../components/response/character_info.yaml#/components/schemas/CharacterInfo"
+            $ref: "../../../components/response/character_info.yaml#/components/schemas/CharacterInfo"
     "400":
-      $ref: "../../components/response/error.yaml#/components/responses/BadRequestError"
+      $ref: "../../../components/response/error.yaml#/components/responses/BadRequestError"
     "401":
-      $ref: "../../components/response/error.yaml#/components/responses/UnauthorizedError"
+      $ref: "../../../components/response/error.yaml#/components/responses/UnauthorizedError"
     "408":
-      $ref: "../../components/response/error.yaml#/components/responses/RequestTimeoutError"
+      $ref: "../../../components/response/error.yaml#/components/responses/RequestTimeoutError"
     "500":
-      $ref: "../../components/response/error.yaml#/components/responses/SystemError"
+      $ref: "../../../components/response/error.yaml#/components/responses/SystemError"
     #"503":
     #  $ref: "#/components/responses/MaintenanceError"

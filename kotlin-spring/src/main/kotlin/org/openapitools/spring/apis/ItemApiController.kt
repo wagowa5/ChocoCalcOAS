@@ -35,125 +35,115 @@ import kotlin.collections.Map
  * @Validated
  * @RequestMapping("\${api.base-path:}")
  */
-abstract class ApiApiBaseController {
+abstract class ItemApiBaseController {
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/can"],
+     *   value = ["/api/item/can"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiCanPost(): kotlin.String
+    abstract fun apiItemCanPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/job"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.GET])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiJobGet(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/job"],
+     *   value = ["/api/item/liquid/atk"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiJobPost(): kotlin.String
+    abstract fun apiItemLiquidAtkPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/liquid/atk"],
+     *   value = ["/api/item/liquid/def"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiLiquidAtkPost(): kotlin.String
+    abstract fun apiItemLiquidDefPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/liquid/def"],
+     *   value = ["/api/item/liquid/mat"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiLiquidDefPost(): kotlin.String
+    abstract fun apiItemLiquidMatPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/liquid/mat"],
+     *   value = ["/api/item/liquid/mdf"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiLiquidMatPost(): kotlin.String
+    abstract fun apiItemLiquidMdfPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/liquid/mdf"],
+     *   value = ["/api/item/vita/all"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiLiquidMdfPost(): kotlin.String
+    abstract fun apiItemVitaAllPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/user"],
-     *   produces = ["application/json"], 
-     *   method = [RequestMethod.GET])
-     * @ResponseStatus(HttpStatus.OK)
-     */
-    abstract fun apiUserGet(): kotlin.String
-
-    /**
-     * 実装クラスに持っていく
-     * @RequestMapping(
-     *   value = ["/api/user"],
+     *   value = ["/api/item/vita/int"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiUserPost(): kotlin.String
+    abstract fun apiItemVitaIntPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/vita/all"],
+     *   value = ["/api/item/vita/luk"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiVitaAllPost(): kotlin.String
+    abstract fun apiItemVitaLukPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/vita/int"],
+     *   value = ["/api/item/vita/pow"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiVitaIntPost(): kotlin.String
+    abstract fun apiItemVitaPowPost(): kotlin.String
 
     /**
      * 実装クラスに持っていく
      * @RequestMapping(
-     *   value = ["/api/vita/pow"],
+     *   value = ["/api/item/vita/spd"],
      *   produces = ["application/json"], 
      *   method = [RequestMethod.POST])
      * @ResponseStatus(HttpStatus.OK)
      */
-    abstract fun apiVitaPowPost(): kotlin.String
+    abstract fun apiItemVitaSpdPost(): kotlin.String
+
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/vit"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaVitPost(): kotlin.String
 
 }
