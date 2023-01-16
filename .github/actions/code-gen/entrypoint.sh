@@ -39,12 +39,28 @@ java -jar ${JAR_PATH} generate \
 
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
-  -i ./dist/openapi/openapi.yaml \
-  -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
-  -t ./config/spring/mustache \
-  -c ./config/spring/config.yaml \
-  -o ./kotlin-spring \
-  --skip-validate-spec
+  -i swagger.yaml \
+  -g kotlin-spring \
+  -o kotlin-spring \
+  --enable-post-process-file \
+  -p useBeanValidation=true \
+  -p serializationLibrary=moshi \
+  -p moshiCodeGen=true \
+  -p enumPropertyNaming=UPPERCASE \
+  -p sortParamsByRequiredFlag=true \
+  -p sortModelPropertiesByRequiredFlag=true \
+  -p dateLibrary=java8 \
+  -p requestDateConverter=toJson \
+  -p useTags=true \
+  -p gradleBuildFile=false \
+  -p packageName=org.openapitools.spring
+#java -jar ${JAR_PATH} generate \
+#  -i ./dist/openapi/openapi.yaml \
+#  -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
+#  -t ./config/spring/mustache \
+#  -c ./config/spring/config.yaml \
+#  -o ./kotlin-spring \
+#  --skip-validate-spec
 
 rm -rf kotlin-spring/docs \
   kotlin-spring/build.gradle.kts \

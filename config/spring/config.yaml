@@ -11,8 +11,7 @@ additionalProperties:
   serializationLibrary: moshi
   moshiCodeGen: true
   enumPropertyNaming: UPPERCASE
-  sortParamsByRequiredFlag: rue
+  sortParamsByRequiredFlag: true
   sortModelPropertiesByRequiredFlag: true
   requestDateConverter: toJson
   reactive: false
-  classname: operation
