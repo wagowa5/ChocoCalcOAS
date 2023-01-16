@@ -24,7 +24,7 @@ paths:
   # TODO ステータス振り分け, ロイヤル, ヘアメイクステ
   # 職業操作
   /api/user/job:
-    $ref: "operations/user/job/job.yaml"
+    $ref: "operations/job/job.yaml"
 
   # 魔獣缶・シール
   /api/item/can:
@@ -44,9 +44,9 @@ paths:
   /api/item/vita/luk:
     $ref: "operations/item/vita/luk.yaml"
   
-  # # 巻物
-  # /api/item/scroll:
-  #   $ref: "operations/item/scroll/scroll.yaml"
+  # 巻物
+  #/api/item/scroll:
+  #  $ref: "operations/item/scroll/scroll.yaml"
 
   # リキッド
   /api/item/liquid/atk:

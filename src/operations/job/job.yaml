@@ -1,6 +1,5 @@
 # TODO ステータス振り分け, ロイヤル, ヘアメイクステ
 get:
-  classname: user
   tags:
     - job
   summary: 職業情報読み込み
@@ -23,7 +22,6 @@ get:
       $ref: "../../../components/response/error.yaml#/components/responses/SystemError"
 
 post:
-  classname: user
   tags:
     - job
   summary: 職業情報登録
