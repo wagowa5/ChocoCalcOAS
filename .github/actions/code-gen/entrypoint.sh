@@ -39,7 +39,7 @@ java -jar ${JAR_PATH} generate \
 
 ## generate kotlin-spring
 java -jar ${JAR_PATH} generate \
-  -i swagger.yaml \
+  -i ./dist/openapi/openapi.yaml \
   -g kotlin-spring \
   -o kotlin-spring \
   --enable-post-process-file \
@@ -53,7 +53,8 @@ java -jar ${JAR_PATH} generate \
   -p requestDateConverter=toJson \
   -p useTags=true \
   -p gradleBuildFile=false \
-  -p packageName=org.openapitools.spring
+  -p packageName=org.openapitools.spring \
+  --skip-validate-spec
 #java -jar ${JAR_PATH} generate \
 #  -i ./dist/openapi/openapi.yaml \
 #  -g org.openapitools.codegen.languages.KotlinSpringServerCodegen \
