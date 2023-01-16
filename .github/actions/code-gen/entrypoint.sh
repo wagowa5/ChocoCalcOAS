@@ -42,6 +42,7 @@ java -jar ${JAR_PATH} generate \
   -i ./dist/openapi/openapi.yaml \
   -g kotlin-spring \
   -o kotlin-spring \
+  -t ./config/spring/mustache \
   --enable-post-process-file \
   -p useBeanValidation=true \
   -p serializationLibrary=moshi \
