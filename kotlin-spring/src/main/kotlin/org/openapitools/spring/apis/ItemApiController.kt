@@ -1,16 +1,18 @@
 package org.openapitools.spring.apis
 
 import org.openapitools.spring.models.Error
-import io.swagger.v3.oas.annotations.*
-import io.swagger.v3.oas.annotations.enums.*
-import io.swagger.v3.oas.annotations.media.*
-import io.swagger.v3.oas.annotations.responses.*
-import io.swagger.v3.oas.annotations.security.*
 import org.springframework.http.HttpStatus
 import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.RequestBody
+import org.springframework.web.bind.annotation.RequestPart
+import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.PathVariable
+import org.springframework.web.bind.annotation.RequestHeader
+import org.springframework.web.bind.annotation.RequestMethod
+import org.springframework.web.bind.annotation.RequestMapping
+import org.springframework.web.bind.annotation.RestController
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.context.request.NativeWebRequest
 import org.springframework.beans.factory.annotation.Autowired
@@ -18,7 +20,6 @@ import org.springframework.beans.factory.annotation.Autowired
 import javax.validation.Valid
 import javax.validation.constraints.DecimalMax
 import javax.validation.constraints.DecimalMin
-import javax.validation.constraints.Email
 import javax.validation.constraints.Max
 import javax.validation.constraints.Min
 import javax.validation.constraints.NotNull
@@ -28,228 +29,121 @@ import javax.validation.constraints.Size
 import kotlin.collections.List
 import kotlin.collections.Map
 
-@RestController
-@Validated
-@RequestMapping("\${api.base-path:}")
-class ItemApiController() {
+/**
+ * 実装クラスに持っていく
+ * @RestController
+ * @Validated
+ * @RequestMapping("\${api.base-path:}")
+ */
+abstract class ItemApiBaseController {
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/can"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemCanPost(): kotlin.String
 
-    @Operation(
-        summary = "魔獣缶・シールを使用",
-        operationId = "apiItemCanPost",
-        description = "魔獣缶・シールを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/can"],
-        produces = ["application/json"]
-    )
-    fun apiItemCanPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/liquid/atk"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidAtkPost(): kotlin.String
 
-    @Operation(
-        summary = "アタークリキッドを使用",
-        operationId = "apiItemLiquidAtkPost",
-        description = "アタークリキッドを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/liquid/atk"],
-        produces = ["application/json"]
-    )
-    fun apiItemLiquidAtkPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/liquid/def"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidDefPost(): kotlin.String
 
-    @Operation(
-        summary = "マモールリキッドを使用",
-        operationId = "apiItemLiquidDefPost",
-        description = "マモールリキッドを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/liquid/def"],
-        produces = ["application/json"]
-    )
-    fun apiItemLiquidDefPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/liquid/mat"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidMatPost(): kotlin.String
 
-    @Operation(
-        summary = "マホアタリキッドを使用",
-        operationId = "apiItemLiquidMatPost",
-        description = "マホアタリキッドを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/liquid/mat"],
-        produces = ["application/json"]
-    )
-    fun apiItemLiquidMatPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/liquid/mdf"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemLiquidMdfPost(): kotlin.String
 
-    @Operation(
-        summary = "マホマモリキッドを使用",
-        operationId = "apiItemLiquidMdfPost",
-        description = "マホマモリキッドを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/liquid/mdf"],
-        produces = ["application/json"]
-    )
-    fun apiItemLiquidMdfPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/all"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaAllPost(): kotlin.String
 
-    @Operation(
-        summary = "ALLビタを使用",
-        operationId = "apiItemVitaAllPost",
-        description = "ALLビタを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/vita/all"],
-        produces = ["application/json"]
-    )
-    fun apiItemVitaAllPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/int"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaIntPost(): kotlin.String
 
-    @Operation(
-        summary = "INTビタを使用",
-        operationId = "apiItemVitaIntPost",
-        description = "INTビタを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/vita/int"],
-        produces = ["application/json"]
-    )
-    fun apiItemVitaIntPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/luk"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaLukPost(): kotlin.String
 
-    @Operation(
-        summary = "LUKビタを使用",
-        operationId = "apiItemVitaLukPost",
-        description = "LUKビタを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/vita/luk"],
-        produces = ["application/json"]
-    )
-    fun apiItemVitaLukPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/pow"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaPowPost(): kotlin.String
 
-    @Operation(
-        summary = "POWビタを使用",
-        operationId = "apiItemVitaPowPost",
-        description = "POWビタを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/vita/pow"],
-        produces = ["application/json"]
-    )
-    fun apiItemVitaPowPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/spd"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaSpdPost(): kotlin.String
 
-    @Operation(
-        summary = "SPDビタを使用",
-        operationId = "apiItemVitaSpdPost",
-        description = "SPDビタを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/vita/spd"],
-        produces = ["application/json"]
-    )
-    fun apiItemVitaSpdPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
+    /**
+     * 実装クラスに持っていく
+     * @RequestMapping(
+     *   value = ["/api/item/vita/vit"],
+     *   produces = ["application/json"], 
+     *   method = [RequestMethod.POST])
+     * @ResponseStatus(HttpStatus.OK)
+     */
+    abstract fun apiItemVitaVitPost(): kotlin.String
 
-    @Operation(
-        summary = "VITビタを使用",
-        operationId = "apiItemVitaVitPost",
-        description = "VITビタを使用 ",
-        responses = [
-            ApiResponse(responseCode = "200", description = "OK", content = [Content(schema = Schema(implementation = kotlin.String::class))]),
-            ApiResponse(responseCode = "400", description = "リクエスト不正エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "401", description = "認証エラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "408", description = "TimeOutエラー", content = [Content(schema = Schema(implementation = Error::class))]),
-            ApiResponse(responseCode = "500", description = "システムエラー", content = [Content(schema = Schema(implementation = Error::class))]) ]
-    )
-    @RequestMapping(
-        method = [RequestMethod.POST],
-        value = ["/api/item/vita/vit"],
-        produces = ["application/json"]
-    )
-    fun apiItemVitaVitPost(): ResponseEntity<kotlin.String> {
-        return ResponseEntity(HttpStatus.NOT_IMPLEMENTED)
-    }
 }
